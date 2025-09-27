@@ -51,7 +51,7 @@ export default function About() {
 
   return (
     <section id="about" className="py-12 sm:py-16 md:py-20 px-4 bg-muted/30">
-      <div className="container mx-auto max-w-7xl">
+      <div className="lg:container mx-auto max-w-7xl">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -69,7 +69,7 @@ export default function About() {
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
           
-          {/* Left Column - Description & Personal Info */}
+          {/* Left Column - Description, Work Experience & Personal Info */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -88,6 +88,108 @@ export default function About() {
                 applications.
               </p>
             </div>
+
+            {/* Detailed Work Experience */}
+            <Card className="border-muted/50 shadow-sm hover:shadow-md transition-shadow">
+              <CardContent className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 flex items-center gap-2">
+                  <Briefcase className="h-5 w-5 text-primary" />
+                  Professional Experience
+                </h3>
+                <div className="space-y-6 sm:space-y-8">
+                  
+                  {/* ShelfEx */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                    viewport={{ once: true }}
+                    className="border-l-4 border-primary/30 pl-4 sm:pl-6"
+                  >
+                    <div className="mb-3">
+                      <p className="font-semibold text-base sm:text-lg">Full Stack Developer</p>
+                      <p className="text-sm sm:text-base text-muted-foreground font-medium">
+                        ShelfEx, Gurgaon, Haryana
+                      </p>
+                      <p className="text-xs sm:text-sm text-muted-foreground">
+                        July 2025 – Present
+                      </p>
+                    </div>
+                    <ul className="list-disc list-inside text-xs sm:text-sm text-muted-foreground space-y-1.5 sm:space-y-2 leading-relaxed">
+                      <li>
+                        Contributed to <strong className="text-foreground">ShelfScan</strong>, 
+                        an AI-powered product recognition platform achieving 
+                        <strong className="text-foreground"> 95% accuracy</strong> with 
+                        <strong className="text-foreground"> &lt;2s inference</strong> time.
+                      </li>
+                      <li>
+                        Optimized <strong className="text-foreground">PostgreSQL</strong> schemas 
+                        and queries using <strong className="text-foreground">Drizzle ORM</strong>, 
+                        raw SQL, and <code className="bg-muted px-1 rounded text-xs">COPY</code> for 
+                        bulk operations.
+                      </li>
+                      <li>
+                        Implemented robust input validation with 
+                        <strong className="text-foreground"> Zod</strong> and enhanced download 
+                        performance using streaming techniques.
+                      </li>
+                      <li>
+                        Built a scalable bulk email system using 
+                        <strong className="text-foreground"> Bull</strong>, 
+                        <strong className="text-foreground"> Redis queues</strong>, and 
+                        <strong className="text-foreground"> AWS SES</strong>.
+                      </li>
+                      <li>
+                        Developed responsive front-end features with 
+                        <strong className="text-foreground"> Next.js</strong> and implemented 
+                        state management using <strong className="text-foreground">Redux</strong>.
+                      </li>
+                    </ul>
+                  </motion.div>
+
+                  {/* Daya Consultancy Services */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.1 }}
+                    viewport={{ once: true }}
+                    className="border-l-4 border-primary/30 pl-4 sm:pl-6"
+                  >
+                    <div className="mb-3">
+                      <p className="font-semibold text-base sm:text-lg">Full Stack Web Developer</p>
+                      <p className="text-sm sm:text-base text-muted-foreground font-medium">
+                        Daya Consultancy Services, Bhubaneswar, Odisha
+                      </p>
+                      <p className="text-xs sm:text-sm text-muted-foreground">
+                        Sept 2024 – July 2025
+                      </p>
+                    </div>
+                    <ul className="list-disc list-inside text-xs sm:text-sm text-muted-foreground space-y-1.5 sm:space-y-2 leading-relaxed">
+                      <li>
+                        Developed enterprise applications: <strong className="text-foreground">CRM system</strong>, 
+                        customizable <strong className="text-foreground">Invoice Generator with BI Dashboard</strong>, 
+                        and Social Media Automation Tool.
+                      </li>
+                      <li>
+                        Integrated <strong className="text-foreground">Razorpay</strong> & 
+                        <strong className="text-foreground"> PhonePe</strong> payment gateways, 
+                        improving payment success rate by <strong className="text-foreground">25%</strong>.
+                      </li>
+                      <li>
+                        Implemented <strong className="text-foreground">XLSX bulk import</strong> functionality 
+                        in CRM system for efficient multi-record data entry.
+                      </li>
+                      <li>
+                        Enhanced application security and scalability using 
+                        <strong className="text-foreground"> JWT authentication</strong>, 
+                        <strong className="text-foreground"> Redis caching</strong>, and 
+                        <strong className="text-foreground"> Docker containerization</strong>.
+                      </li>
+                    </ul>
+                  </motion.div>
+                </div>
+              </CardContent>
+            </Card>
 
             {/* Personal Information Card */}
             <Card className="border-muted/50 shadow-sm hover:shadow-md transition-shadow">

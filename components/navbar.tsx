@@ -34,7 +34,7 @@ export default function Navbar() {
         isScrolled ? "bg-background/80 backdrop-blur-md shadow-md py-2" : "bg-transparent py-4"
       }`}
     >
-      <div className="container mx-auto px-4 flex items-center justify-between">
+      <div className="lg:container mx-auto px-4 flex items-center justify-between">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}

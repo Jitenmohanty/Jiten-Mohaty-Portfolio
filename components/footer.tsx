@@ -9,7 +9,7 @@ export default function Footer() {
 
   return (
     <footer className="py-10 px-4 border-t">
-      <div className="container mx-auto">
+      <div className="lg:container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

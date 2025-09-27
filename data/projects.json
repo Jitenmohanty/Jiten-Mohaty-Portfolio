@@ -15,6 +15,13 @@
       "url": "https://ecommerce-app-full-satck.vercel.app/",
       "imgSrc": "https://images.pexels.com/photos/34577/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600"
     },
+     {
+      "title": "Morning Brief AI AGENT",
+      "date": "10/05/2024",
+      "description": "An AI Agent that summarizes daily news using AI models. It scrapes the web, compiles top headlines, and delivers a concise morning brief, acting like your personal news assistant.",
+      "url": "https://github.com/Jitenmohanty/Daily_News_Agent",
+      "imgSrc": "https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg"
+    },
     {
       "date": "25/05/2023",
       "title": "TEXT UTILS",
@@ -170,13 +177,7 @@
       "url": "https://github.com/Jitenmohanty/Ai_Code_Reviewer",
       "imgSrc": "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
-    {
-      "title": "Morning Brief AI AGENT",
-      "date": "10/05/2024",
-      "description": "An AI Agent that summarizes daily news using AI models. It scrapes the web, compiles top headlines, and delivers a concise morning brief, acting like your personal news assistant.",
-      "url": "https://github.com/Jitenmohanty/Daily_News_Agent",
-      "imgSrc": "https://images.pexels.com/photos/356043/pexels-photo-356043.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
+   
     {
       "title": "Automated Tweet AI AGENT",
       "date": "15/05/2024",
