@@ -18,6 +18,7 @@ type Project = {
   title: string;
   description: string;
   url: string;
+  demo: string;
   imgSrc: string;
   category?: string;
 };
@@ -261,7 +262,7 @@ export default function Projects() {
                       </CardContent>
                       <CardFooter className="p-6 pt-0 flex justify-between">
                         <Link
-                          href={project.url}
+                          href={project.demo}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -271,10 +272,7 @@ export default function Projects() {
                           </Button>
                         </Link>
                         <Link
-                          href={`https://github.com/Jitenmohanty/${project.title.replace(
-                            /\s+/g,
-                            "-"
-                          )}`}
+                          href={project.url}
                           target="_blank"
                           rel="noopener noreferrer"
                         >

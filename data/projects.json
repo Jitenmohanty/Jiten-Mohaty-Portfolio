@@ -1,188 +1,59 @@
 {
   "projects": [
-
     {
       "title": "AI Money Manager",
       "date": "01/02/2025",
       "description": "An AI-powered budgeting and financial management platform built with Next.js and Supabase. Uses Gemini API for AI-driven spending insights, Clerk for secure authentication, Arcjet for automated email reports, and Inngest for serverless workflow automation. Helps users track multiple accounts and make smarter financial decisions.",
       "url": "https://github.com/Jitenmohanty/NextJs_Projects/tree/master/money_manager_ai",
+      "demo": "",
       "imgSrc": "https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
-     {
+    {
+      "title": "AI Quiz Platform",
+      "date": "10/04/2024",
+      "description": "An AI-powered quiz application built with Node.js, Express, and MongoDB. Teachers can upload documents (PDFs, images, text) to automatically generate quizzes using Google Gemini AI, while students can take quizzes, receive instant feedback with explanations, track progress, and compete on topic-wise leaderboards. Includes real-time analytics, authentication, and structured MCQs generation.",
+      "url": "https://github.com/Jitenmohanty/quiz-genie-academy-pro",
+      "demo": "https://quiz-genie-academy-pro.vercel.app/",
+      "imgSrc": "https://images.pexels.com/photos/5428830/pexels-photo-5428830.jpeg"
+    },
+    {
       "date": "09/12/2023",
       "title": "E-Commerce",
       "description": "This a Fullstack MERN app, Which was build using react, Redux, Node, Express, MongoDB also use Stripe for Payments gateways.",
-      "url": "https://ecommerce-app-full-satck.vercel.app/",
+      "url": "https://github.com/Jitenmohanty/EcommerceApp-FullSatck",
+      "demo": "https://ecommerce-app-full-satck-jitenmohantys-projects.vercel.app/",
       "imgSrc": "https://images.pexels.com/photos/34577/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600"
     },
-     {
+    {
       "title": "Morning Brief AI AGENT",
       "date": "10/05/2024",
       "description": "An AI Agent that summarizes daily news using AI models. It scrapes the web, compiles top headlines, and delivers a concise morning brief, acting like your personal news assistant.",
       "url": "https://github.com/Jitenmohanty/Daily_News_Agent",
+      "demo": "",
       "imgSrc": "https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg"
     },
     {
-      "date": "25/05/2023",
-      "title": "TEXT UTILS",
-      "description": "This is the sample Project On react  Where To learn and show case the Power Of react also some Utility of texts...",
-      "url": "https://jitenmohanty.github.io/TextUtils/",
-      "imgSrc": "https://media.istockphoto.com/id/1164644807/photo/person-marking-error-with-red-marker.webp?b=1&s=612x612&w=0&k=20&c=iQXqIp1nQiNZkG_GijxgQfdt8l-uBz9r6HHGDTkADtY="
-    },
-    {
-      "date": "01/06/2023",
-      "title": "TECHY STAR",
-      "description": "This is the sample project on the Learning phase of React Js , Here I am learn to use Carosuel ....",
-      "url": "https://tech-star-iota.vercel.app/",
-      "imgSrc": "https://cdn.pixabay.com/photo/2018/06/07/16/49/virtual-3460451_960_720.jpg"
-    },
-    {
-      "date": "17/07/2023",
-      "title": "VIDEO HUB",
-      "description": "This is the sample Project Of Video hub Here i am creating Login and SignUp page also we can Upload a video are You can seen your lecture Material...",
-      "url": "https://chakra-ui-reack-project-videohub-git-master-jitenmohanty.vercel.app/",
-      "imgSrc": "https://cdn.pixabay.com/photo/2016/11/21/12/51/mobile-phone-1845233__340.jpg"
-    },
-    {
-      "date": "10/08/2023",
-      "title": "CRYPTO",
-      "description": "This is the sample Project on Crypto , I am fetching the crypto coin from an api and add some extra stuff .. Like You can track the crypto chart...",
-      "url": "https://crypto-app-by-react.vercel.app/",
-      "imgSrc": "https://cdn.pixabay.com/photo/2017/12/12/12/44/bitcoin-3014614_960_720.jpg"
-    },
-    {
-      "date": "10/07/2023",
-      "title": "NEWS RUNNER",
-      "description": "This is the sample Project on News Api , All news are showing In catagorically also You can read all articles.",
-      "url": "https://github.com/Jitenmohanty/NewsRunner",
-      "imgSrc": "https://media.istockphoto.com/id/1324677867/photo/beautiful-caucasian-female-is-using-laptop-for-chatting-with-fiends-in-social-network-at-home.webp?b=1&s=612x612&w=0&k=20&c=CimmPrqhmHyzn2n1oIAtXkeDiPyrDBPZatXcbSFWekA="
-    },
-    {
-      "date": "25/08/2023",
-      "title": "REACT CART",
-      "description": "This is the sample Project On react-Redux-Toolkit  Where The stock mangement and cart billings are used By redux...",
-      "url": "https://cart-app-on-react-redux-toolkit.vercel.app/",
-      "imgSrc": "https://cdn.pixabay.com/photo/2019/12/14/08/36/shopping-4694470_960_720.jpg"
-    },
-    {
-      "date": "06/08/2023",
-      "title": "CHAT APP",
-      "description": "This is a Major Project On MERN stack where i am using Socket-Io for the Real Time Chatting and add some UI for More Atractive..or some User Authentications..",
-      "url": "https://github.com/Jitenmohanty/ChatAppReactNodejsSocetAuth.git",
-      "imgSrc": "https://media.istockphoto.com/id/1217093906/photo/womens-hand-typing-on-mobile-smartphone-live-chat-chatting-on-application-communication.webp?b=1&s=612x612&w=0&k=20&c=musuQuCTEcuaKrsnd1xZdCp51ToAt1qv_od0HKkQD9Q="
-    },
-    {
-      "date": "04/09/2023",
-      "title": "iNoteBook",
-      "description": "This is the sample Project On react  Where To learn and show case the Power Of react also some Utility of texts...",
-      "url": "https://6501446b40687c35e19be9c3--earnest-naiad-dc77cc.netlify.app/",
-      "imgSrc": "https://images.freeimages.com/images/large-previews/a39/notes-on-wood-4-1315469.jpg?fmt=webp&w=350"
-    },
-    {
-      "date": "07/09/2023",
-      "title": "PORTFOLIO",
-      "description": "This is the Project That Show Case My Works and Connect With the Techy Freinds..",
-      "url": "/",
-      "imgSrc": "https://media.istockphoto.com/id/1413884806/photo/financial-advisor-or-lawyer-with-couple-explaining-options.webp?b=1&s=612x612&w=0&k=20&c=diY-qOJ0d947A78yGYXP1An0Ct3S995Erd43yIRiNv4="
-    },
-    {
-      "date": "10/09/2023",
-      "title": "Currency Convertor",
-      "description": "This is the sample Project On react  Where To Convert rupee to any currency also Swapping avalaible",
-      "url": "https://https-github-com-jitenmohanty-react-hooks-tree-mas-jitenmohanty.vercel.app/",
-      "imgSrc": "https://images.pexels.com/photos/164527/pexels-photo-164527.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    {
-      "date": "15/09/2023",
-      "title": "Todo App",
-      "description": "This is the sample Project On react  Where we store our todos also delete and complete tag to help track your todos..",
-      "url": "https://todo-assignment-blue.vercel.app/",
-      "imgSrc": "https://images.pexels.com/photos/3299/postit-scrabble-to-do.jpg?auto=compress&cs=tinysrgb&w=600"
-    },
-    {
-      "date": "20/09/2023",
-      "title": "Diseney Hotstar Clone",
-      "description": "This is the sample Project On react  Where we showcase on diseney frontend how work using firebase backend ",
-      "url": "https://desney-hotstar-three.vercel.app/",
-      "imgSrc": "https://images.pexels.com/photos/6921010/pexels-photo-6921010.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    {
-      "date": "29/09/2023",
-      "title": "Blog Post",
-      "description": "This is the major Project On react and appWrite Where we post our blogs and also read the other blogs...",
-      "url": "https://full-stack-blog-post-with-app-write.vercel.app/",
-      "imgSrc": "https://images.pexels.com/photos/262508/pexels-photo-262508.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    {
-      "date": "04/10/2023",
-      "title": "Food Recipe Finder",
-      "description": "This is the simple Project On react where we find our recepe on  any type of foods you want to eat...",
-      "url": "https://food-finder-zeta.vercel.app/",
-      "imgSrc": "https://images.pexels.com/photos/5966431/pexels-photo-5966431.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    {
-      "date": "15/10/2023",
-      "title": "Instagram Typo Clone",
-      "description": "This is the major Project On react and appwrite where we create our connection and Like, Save and Create and update your posts... ",
-      "url": "https://instagram-typo-clone.vercel.app/",
-      "imgSrc": "https://images.pexels.com/photos/2694434/pexels-photo-2694434.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-   
-    {
-      "date": "1/02/2024",
-      "title": "Weather App",
-      "description": "This is a Weather app, Where you can find out tempreture and other information of any city you want just type the city name, then shows the result.",
-      "url": "https://weather-app-on-react.vercel.app/",
-      "imgSrc": "https://images.pexels.com/photos/14756719/pexels-photo-14756719.jpeg?auto=compress&cs=tinysrgb&w=6000"
-    },
-    {
-      "date": "15/02/2024",
-      "title": "SUN DOWN Clone",
-      "description": "This is a Sun Down website clone using html css and js also use locomotive and GSAP to build.",
-      "url": "https://github.com/Jitenmohanty/Js_Projects.git",
-      "imgSrc": "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    {
-      "date": "15/04/2024",
-      "title": "Oach Design Clone",
-      "description": "This is a Oach Design website clone using html css and js also use locomotive and GSAP and Framer-motion to build.",
-      "url": "https://github.com/Jitenmohanty/React-WebDesigns/tree/master/OACH%20Design%20Clone",
-      "imgSrc": "https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    {
-      "date": "15/02/2024",
-      "title": "Next JS Blog",
-      "description": "This is a Next js project, it is a blog app how to handle api on Next js also Like and save feature using Local storage.",
-      "url": "https://github.com/Jitenmohanty/NextJs_Projects/tree/master/nextjs_dashboard",
-      "imgSrc": "https://images.pexels.com/photos/261662/pexels-photo-261662.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    {
-      "date": "15/02/2024",
-      "title": "Next JS Feedback system",
-      "description": "This is a Next js project where user Login then give the feedback of the app also has AI feature to suggest difforent feedbacks (GEMINI AI)",
-      "url": "https://github.com/Jitenmohanty/NextJs_Projects/tree/master/next_js_feedback_system",
-      "imgSrc": "https://images.pexels.com/photos/5439449/pexels-photo-5439449.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    {
-      "date": "15/02/2024",
-      "title": "Quiz builder System",
-      "description": "This is a React project where user create his own project also has User take test of alredy created quiz system.",
-      "url": "https://github.com/Jitenmohanty/QuizBuilder",
-      "imgSrc": "https://images.pexels.com/photos/4022332/pexels-photo-4022332.jpeg?auto=compress&cs=tinysrgb&w=600"
+      "title": "Admin Dashboard",
+      "date": "10/04/2024",
+      "description": "A fully responsive Admin Dashboard built with React, TypeScript, SCSS, and Chart.js. Includes core admin features such as user management, analytics, data visualization, authentication, and responsive layouts for seamless performance across devices.",
+      "url": "https://github.com/Jitenmohanty/React-WebDesigns-AdminDashboard",
+      "demo": "https://react-admin-dashboard-fawn.vercel.app",
+      "imgSrc": "https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg"
     },
     {
       "title": "AI Code Reviewer AI AGENT",
       "date": "01/05/2024",
       "description": "An AI-powered code review agent that reviews your code using advanced LLMs like OpenAI. It provides suggestions, detects bugs, and improves code quality automatically.",
       "url": "https://github.com/Jitenmohanty/Ai_Code_Reviewer",
+      "demo": "",
       "imgSrc": "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
-   
     {
       "title": "Automated Tweet AI AGENT",
       "date": "15/05/2024",
       "description": "An AI-powered Twitter automation agent that generates and posts tweets about the computer science world. Built with Gemini API and X API, it creates engaging, real-time content automatically.",
       "url": "https://github.com/Jitenmohanty/Tweet_Generator",
+      "demo": "",
       "imgSrc": "https://media.istockphoto.com/id/178894719/photo/blue-twittering-bird-standing-on-the-word-tweet.jpg?s=1024x1024&w=is&k=20&c=WW4qmdUaL9vBj8YgeWW69R88_jMZya_QuUp0Cnnv2Mg="
     },
     {
@@ -190,8 +61,184 @@
       "date": "20/05/2024",
       "description": "An AI Agent that fetches job opportunities matching your resume using the Adzuna API and Gemini AI. It stores jobs with apply links and details directly into Google Sheets for easy tracking and application.",
       "url": "https://github.com/Jitenmohanty/Job_Collector_Agent",
+      "demo": "",
       "imgSrc": "https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg"
+    },
+    {
+      "title": "React Oach Design  Clone",
+      "date": "20/05/2024",
+      "description": "A pixel-perfect clone of the Oach design website built with React and GSAP. Focused on modern UI/UX with smooth scroll-based animations, fluid transitions, and interactive elements powered by GSAP. The project replicates Oach’s minimal and aesthetic design while showcasing advanced frontend animation techniques for an engaging user experience.",
+      "url": "https://github.com/Jitenmohanty/React-WebDesigns",
+      "demo": "https://react-web-designs.vercel.app/",
+      "imgSrc": "https://images.pexels.com/photos/777001/pexels-photo-777001.jpeg"
+    },
+    {
+      "date": "25/05/2023",
+      "title": "TEXT UTILS",
+      "description": "This is the sample Project On react  Where To learn and show case the Power Of react also some Utility of texts...",
+      "url": "https://github.com/Jitenmohanty/TextUtils",
+      "demo": "https://jitenmohanty.github.io/TextUtils/",
+      "imgSrc": "https://media.istockphoto.com/id/1164644807/photo/person-marking-error-with-red-marker.webp?b=1&s=612x612&w=0&k=20&c=iQXqIp1nQiNZkG_GijxgQfdt8l-uBz9r6HHGDTkADtY="
+    },
+    {
+      "date": "01/06/2023",
+      "title": "TECHY STAR",
+      "description": "This is the sample project on the Learning phase of React Js , Here I am learn to use Carosuel ....",
+      "url": "https://github.com/Jitenmohanty/TechStar",
+      "demo": "https://tech-star-iota.vercel.app/",
+      "imgSrc": "https://cdn.pixabay.com/photo/2018/06/07/16/49/virtual-3460451_960_720.jpg"
+    },
+    {
+      "date": "17/07/2023",
+      "title": "VIDEO HUB",
+      "description": "This is the sample Project Of Video hub Here i am creating Login and SignUp page also we can Upload a video are You can seen your lecture Material...",
+      "url": "https://github.com/Jitenmohanty/chakra-ui-reack-project-videohub",
+      "demo": "https://chakra-ui-reack-project-videohub-git-master-jitenmohanty.vercel.app/",
+      "imgSrc": "https://cdn.pixabay.com/photo/2016/11/21/12/51/mobile-phone-1845233__340.jpg"
+    },
+    {
+      "date": "10/08/2023",
+      "title": "CRYPTO",
+      "description": "This is the sample Project on Crypto , I am fetching the crypto coin from an api and add some extra stuff .. Like You can track the crypto chart...",
+      "url": "https://github.com/Jitenmohanty/CryptoAppByReact",
+      "demo": "https://crypto-app-by-react.vercel.app/",
+      "imgSrc": "https://cdn.pixabay.com/photo/2017/12/12/12/44/bitcoin-3014614_960_720.jpg"
+    },
+    {
+      "date": "10/07/2023",
+      "title": "NEWS RUNNER",
+      "description": "This is the sample Project on News Api , All news are showing In catagorically also You can read all articles.",
+      "url": "https://github.com/Jitenmohanty/NewsRunner",
+      "demo": "",
+      "imgSrc": "https://media.istockphoto.com/id/1324677867/photo/beautiful-caucasian-female-is-using-laptop-for-chatting-with-fiends-in-social-network-at-home.webp?b=1&s=612x612&w=0&k=20&c=CimmPrqhmHyzn2n1oIAtXkeDiPyrDBPZatXcbSFWekA="
+    },
+    {
+      "date": "25/08/2023",
+      "title": "REACT CART",
+      "description": "This is the sample Project On react-Redux-Toolkit  Where The stock mangement and cart billings are used By redux...",
+      "url": "https://github.com/Jitenmohanty/cart",
+      "demo": "https://cart-app-on-react-redux-toolkit.vercel.app/",
+      "imgSrc": "https://cdn.pixabay.com/photo/2019/12/14/08/36/shopping-4694470_960_720.jpg"
+    },
+    {
+      "date": "06/08/2023",
+      "title": "CHAT APP",
+      "description": "This is a Major Project On MERN stack where i am using Socket-Io for the Real Time Chatting and add some UI for More Atractive..or some User Authentications..",
+      "url": "https://github.com/Jitenmohanty/ChatAppReactNodejsSocetAuth.git",
+      "demo": "",
+      "imgSrc": "https://media.istockphoto.com/id/1217093906/photo/womens-hand-typing-on-mobile-smartphone-live-chat-chatting-on-application-communication.webp?b=1&s=612x612&w=0&k=20&c=musuQuCTEcuaKrsnd1xZdCp51ToAt1qv_od0HKkQD9Q="
+    },
+    {
+      "date": "04/09/2023",
+      "title": "iNoteBook",
+      "description": "This is the sample Project On react  Where To learn and show case the Power Of react also some Utility of texts...",
+      "url": "https://6501446b40687c35e19be9c3--earnest-naiad-dc77cc.netlify.app/",
+      "demo": "",
+      "imgSrc": "https://images.freeimages.com/images/large-previews/a39/notes-on-wood-4-1315469.jpg?fmt=webp&w=350"
+    },
+    {
+      "date": "07/09/2023",
+      "title": "PORTFOLIO",
+      "description": "This is the Project That Show Case My Works and Connect With the Techy Freinds..",
+      "url": "https://github.com/Jitenmohanty/cart",
+      "demo": "https://portfolio-react-me.vercel.app/",
+      "imgSrc": "https://media.istockphoto.com/id/1413884806/photo/financial-advisor-or-lawyer-with-couple-explaining-options.webp?b=1&s=612x612&w=0&k=20&c=diY-qOJ0d947A78yGYXP1An0Ct3S995Erd43yIRiNv4="
+    },
+    {
+      "date": "10/09/2023",
+      "title": "Currency Convertor",
+      "description": "This is the sample Project On react  Where To Convert rupee to any currency also Swapping avalaible",
+      "url": "https://github.com/Jitenmohanty/CurrencyConvertor_Custom_Hooks",
+      "demo": "https://https-github-com-jitenmohanty-react-hooks-tree-mas-jitenmohanty.vercel.app/",
+      "imgSrc": "https://images.pexels.com/photos/164527/pexels-photo-164527.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "date": "15/09/2023",
+      "title": "Todo App",
+      "description": "This is the sample Project On react  Where we store our todos also delete and complete tag to help track your todos..",
+      "url": "https://github.com/Jitenmohanty/TodoAssignment",
+      "demo": "https://todo-assignment-blue.vercel.app/",
+      "imgSrc": "https://images.pexels.com/photos/3299/postit-scrabble-to-do.jpg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "date": "20/09/2023",
+      "title": "Diseney Hotstar Clone",
+      "description": "This is the sample Project On react  Where we showcase on diseney frontend how work using firebase backend ",
+      "url": "https://github.com/Jitenmohanty/DesneyHotstar",
+      "demo": "https://desney-hotstar-three.vercel.app/",
+      "imgSrc": "https://images.pexels.com/photos/6921010/pexels-photo-6921010.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "date": "29/09/2023",
+      "title": "Blog Post",
+      "description": "This is the major Project On react and appWrite Where we post our blogs and also read the other blogs...",
+      "url": "https://github.com/Jitenmohanty/FullStackBlogPostWithAppWrite",
+      "demo": "https://full-stack-blog-post-with-app-write.vercel.app/",
+      "imgSrc": "https://images.pexels.com/photos/262508/pexels-photo-262508.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "date": "04/10/2023",
+      "title": "Food Recipe Finder",
+      "description": "This is the simple Project On react where we find our recepe on  any type of foods you want to eat...",
+      "url": "https://github.com/Jitenmohanty/Food-Finder",
+      "demo": "https://food-finder-zeta.vercel.app/",
+      "imgSrc": "https://images.pexels.com/photos/5966431/pexels-photo-5966431.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "date": "15/10/2023",
+      "title": "Instagram Typo Clone",
+      "description": "This is the major Project On react and appwrite where we create our connection and Like, Save and Create and update your posts... ",
+      "url": "https://github.com/Jitenmohanty/Instagram-Typo--Clone",
+      "demo": "https://instagram-typo-clone.vercel.app/",
+      "imgSrc": "https://images.pexels.com/photos/2694434/pexels-photo-2694434.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "date": "1/02/2024",
+      "title": "Weather App",
+      "description": "This is a Weather app, Where you can find out tempreture and other information of any city you want just type the city name, then shows the result.",
+      "url": "https://weather-app-on-react.vercel.app/",
+      "demo": "https://weather-app-on-react.vercel.app/",
+      "imgSrc": "https://images.pexels.com/photos/14756719/pexels-photo-14756719.jpeg?auto=compress&cs=tinysrgb&w=6000"
+    },
+    {
+      "date": "15/02/2024",
+      "title": "SUN DOWN Clone",
+      "description": "This is a Sun Down website clone using html css and js also use locomotive and GSAP to build.",
+      "url": "https://github.com/Jitenmohanty/Js_Projects.git",
+      "demo": "/",
+      "imgSrc": "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "date": "15/04/2024",
+      "title": "Oach Design Clone",
+      "description": "This is a Oach Design website clone using html css and js also use locomotive and GSAP and Framer-motion to build.",
+      "url": "https://github.com/Jitenmohanty/React-WebDesigns/tree/master/OACH%20Design%20Clone",
+      "demo": "/",
+      "imgSrc": "https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "date": "15/02/2024",
+      "title": "Next JS Blog",
+      "description": "This is a Next js project, it is a blog app how to handle api on Next js also Like and save feature using Local storage.",
+      "url": "https://github.com/Jitenmohanty/NextJs_Projects/tree/master/nextjs_dashboard",
+      "demo": "/",
+      "imgSrc": "https://images.pexels.com/photos/261662/pexels-photo-261662.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "date": "15/02/2024",
+      "title": "Next JS Feedback system",
+      "description": "This is a Next js project where user Login then give the feedback of the app also has AI feature to suggest difforent feedbacks (GEMINI AI)",
+      "url": "https://github.com/Jitenmohanty/NextJs_Projects/tree/master/next_js_feedback_system",
+      "demo": "/",
+      "imgSrc": "https://images.pexels.com/photos/5439449/pexels-photo-5439449.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "date": "15/02/2024",
+      "title": "Quiz builder System",
+      "description": "This is a React project where user create his own project also has User take test of alredy created quiz system.",
+      "url": "https://github.com/Jitenmohanty/QuizBuilder",
+      "demo": "/",
+      "imgSrc": "https://images.pexels.com/photos/4022332/pexels-photo-4022332.jpeg?auto=compress&cs=tinysrgb&w=600"
     }
-
   ]
 }
