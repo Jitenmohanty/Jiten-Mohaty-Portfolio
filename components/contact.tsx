@@ -27,9 +27,22 @@ export default function Contact() {
       setIsSubmitting(true);
 
       // Replace these with your actual EmailJS service, template, and user IDs
+      // await emailjs.sendForm(
+      //   process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+      //   process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+      //   formRef.current,
+      //   process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      // );
       await emailjs.sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_ADMIN!, // to you
+        formRef.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!, // to user
         formRef.current,
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
