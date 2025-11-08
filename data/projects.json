@@ -5,7 +5,7 @@
       "date": "01/02/2025",
       "description": "An AI-powered budgeting and financial management platform built with Next.js and Supabase. Uses Gemini API for AI-driven spending insights, Clerk for secure authentication, Arcjet for automated email reports, and Inngest for serverless workflow automation. Helps users track multiple accounts and make smarter financial decisions.",
       "url": "https://github.com/Jitenmohanty/NextJs_Projects/tree/master/money_manager_ai",
-      "demo": "",
+      "demo": "https://next-js-projects-4kry.vercel.app/",
       "imgSrc": "https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
