@@ -12,8 +12,8 @@ export default function Hero() {
   const handleDownloadResume = () => {
     // Create a link element
     const link = document.createElement("a")
-    link.href = "/resume.pdf" // Path to your resume PDF
-    link.download = "My_own_experience_resume.pdf"
+    link.href = "/resume2.pdf" // Path to your resume PDF
+    link.download = "Jiten_resume.pdf"
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
