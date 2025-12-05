@@ -12,6 +12,7 @@ import Image from "next/image";
 import projectsData from "@/data/projects.json";
 import ProjectFilter from "./project-filter";
 import { Input } from "@/components/ui/input";
+import ProjectModal from "./project-modal";
 
 type Project = {
   date: string;
@@ -29,6 +30,8 @@ export default function Projects() {
   const [isLoading, setIsLoading] = useState(false);
   const [activeFilter, setActiveFilter] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Extract unique categories from projects
   const rawProjects = projectsData.projects as Project[];
@@ -160,6 +163,11 @@ export default function Projects() {
     },
   };
 
+  const handleProjectClick = (project: Project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
   return (
     <section id="projects" className="py-20 px-4 bg-muted/30">
       <div className="lg:container mx-auto">
@@ -231,7 +239,10 @@ export default function Projects() {
                     exit={{ opacity: 0, y: -50 }}
                     layout
                   >
-                    <Card className="overflow-hidden h-full flex flex-col">
+                    <Card 
+                      className="overflow-hidden h-full flex flex-col cursor-pointer group hover:shadow-xl transition-all duration-300 border-border/50"
+                      onClick={() => handleProjectClick(project)}
+                    >
                       <div className="relative h-48 overflow-hidden">
                         <Image
                           src={
@@ -240,27 +251,32 @@ export default function Projects() {
                           }
                           alt={project.title}
                           fill
-                          className="object-cover transition-transform duration-500 hover:scale-110"
+                          className="object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                         {project.category && (
-                          <div className="absolute top-2 right-2 bg-primary/80 text-white text-xs px-2 py-1 rounded-full">
+                          <div className="absolute top-2 right-2 bg-primary/80 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
                             {project.category}
                           </div>
                         )}
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                          <span className="bg-background/80 text-foreground px-4 py-2 rounded-full text-sm font-medium backdrop-blur-md transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            View Details
+                          </span>
+                        </div>
                       </div>
                       <CardContent className="p-6 flex-grow">
                         <div className="flex items-center text-sm text-muted-foreground mb-3">
                           <Calendar className="h-4 w-4 mr-2" />
                           <span>{project.date}</span>
                         </div>
-                        <h3 className="text-xl font-bold mb-2">
+                        <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
                           {project.title}
                         </h3>
                         <p className="text-muted-foreground line-clamp-3">
                           {project.description}
                         </p>
                       </CardContent>
-                      <CardFooter className="p-6 pt-0 flex justify-between">
+                      <CardFooter className="p-6 pt-0 flex justify-between" onClick={(e) => e.stopPropagation()}>
                         <Link
                           href={project.demo}
                           target="_blank"
@@ -315,6 +331,11 @@ export default function Projects() {
           </motion.div>
         )}
       </div>
+      <ProjectModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        project={selectedProject}
+      />
     </section>
   );
 }
