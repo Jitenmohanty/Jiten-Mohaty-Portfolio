@@ -24,6 +24,31 @@ type Project = {
   category?: string;
 };
 
+function ProjectImage({ src, alt }: { src: string; alt: string }) {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <>
+      <div
+        className={`absolute inset-0 bg-muted transition-opacity duration-500 ${
+          loaded ? "opacity-0" : "animate-pulse opacity-100"
+        }`}
+        aria-hidden="true"
+      />
+      <Image
+        src={src || "/placeholder.svg?height=400&width=600"}
+        alt={alt}
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        loading="lazy"
+        onLoad={() => setLoaded(true)}
+        className={`object-cover transition-all duration-500 group-hover:scale-110 ${
+          loaded ? "opacity-100" : "opacity-0"
+        }`}
+      />
+    </>
+  );
+}
+
 export default function Projects() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [visibleProjects, setVisibleProjects] = useState(6);
@@ -243,15 +268,10 @@ export default function Projects() {
                       className="overflow-hidden h-full flex flex-col cursor-pointer group hover:shadow-xl transition-all duration-300 border-border/50"
                       onClick={() => handleProjectClick(project)}
                     >
-                      <div className="relative h-48 overflow-hidden">
-                        <Image
-                          src={
-                            project.imgSrc ||
-                            "/placeholder.svg?height=400&width=600"
-                          }
+                      <div className="relative h-48 overflow-hidden bg-muted">
+                        <ProjectImage
+                          src={project.imgSrc}
                           alt={project.title}
-                          fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                         {project.category && (
                           <div className="absolute top-2 right-2 bg-primary/80 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
