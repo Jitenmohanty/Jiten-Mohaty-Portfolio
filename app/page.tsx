@@ -1,6 +1,7 @@
 // app/page.tsx
 import Hero from "@/components/hero";
 import About from "@/components/about";
+import TalkToMe from "@/components/talk-to-me";
 import Skills from "@/components/skills";
 import Projects from "@/components/projects";
 import Contact from "@/components/contact";
@@ -21,6 +22,7 @@ export default function Home() {
       <Contact />
       <Footer />
       <ScrollToTop />
+      <TalkToMe />
     </main>
   );
 }
