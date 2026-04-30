@@ -24,7 +24,15 @@ type Project = {
   category?: string;
 };
 
-function ProjectImage({ src, alt }: { src: string; alt: string }) {
+function ProjectImage({
+  src,
+  alt,
+  priority = false,
+}: {
+  src: string;
+  alt: string;
+  priority?: boolean;
+}) {
   const [loaded, setLoaded] = useState(false);
   return (
     <>
@@ -39,7 +47,9 @@ function ProjectImage({ src, alt }: { src: string; alt: string }) {
         alt={alt}
         fill
         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        loading="lazy"
+        priority={priority}
+        loading={priority ? undefined : "lazy"}
+        quality={70}
         onLoad={() => setLoaded(true)}
         className={`object-cover transition-all duration-500 group-hover:scale-110 ${
           loaded ? "opacity-100" : "opacity-0"
@@ -272,6 +282,7 @@ export default function Projects() {
                         <ProjectImage
                           src={project.imgSrc}
                           alt={project.title}
+                          priority={index < 3}
                         />
                         {project.category && (
                           <div className="absolute top-2 right-2 bg-primary/80 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
