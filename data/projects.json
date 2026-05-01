@@ -1,28 +1,76 @@
 {
   "projects": [
     {
+      "title": "ShelfScan — AI Product Recognition",
+      "date": "01/07/2025",
+      "description": "Enterprise AI-powered product recognition platform built at ShelfEx, achieving 95% scan accuracy with sub-2s inference. Developed with Next.js and Redux on the frontend, PostgreSQL with Drizzle ORM for schema design, and bulk email workflows via Bull/Redis queues and AWS SES. Implemented Zod validation and streaming download performance — serving real-time shelf-auditing for FMCG clients.",
+      "url": "",
+      "demo": "",
+      "imgSrc": "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "category": "Professional"
+    },
+    {
+      "title": "AgentHub — Voice AI Platform",
+      "date": "01/04/2025",
+      "description": "A voice AI platform for small businesses powered by Gemini Live. Business owners deploy trained voice agents for customer calls with zero setup. Features multi-agent management, embed widgets, session-based conversations, and a real-time call dashboard. Powers the 'Talk to my AI' widget on this portfolio — click the floating button to try it live.",
+      "url": "https://github.com/Jitenmohanty/VOICE_AgentHub",
+      "demo": "https://voice-agent-hub.vercel.app/",
+      "imgSrc": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "category": "AI AGENT"
+    },
+    {
+      "title": "Social Media Automation Tool",
+      "date": "01/12/2024",
+      "description": "Social media automation platform built at Daya Consultancy Services. Enables scheduled posting, multi-account management, and AI-assisted content suggestions across major platforms. Integrated with platform APIs for automated publishing, analytics tracking, and audience engagement insights.",
+      "url": "https://github.com/Jitenmohanty",
+      "demo": "",
+      "imgSrc": "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "category": "Professional"
+    },
+    {
+      "title": "Invoice Generator + BI Dashboard",
+      "date": "01/10/2024",
+      "description": "Customizable invoice generator with an integrated Business Intelligence dashboard built at Daya Consultancy Services. Supports multi-template invoicing, tax calculations, and PDF export. The BI layer delivers real-time revenue analytics, client spend trends, and payment performance charts — reducing manual reporting effort significantly.",
+      "url": "https://github.com/Jitenmohanty",
+      "demo": "",
+      "imgSrc": "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "category": "Professional"
+    },
+    {
+      "title": "Enterprise CRM System",
+      "date": "01/09/2024",
+      "description": "Full-featured enterprise CRM built at Daya Consultancy Services. Includes lead management, client tracking, and XLSX bulk import for efficient multi-record data entry. Integrated Razorpay and PhonePe payment gateways — improving payment success rate by 25%. Secured with JWT authentication, Redis caching, and Docker containerization.",
+      "url": "https://github.com/Jitenmohanty",
+      "demo": "",
+      "imgSrc": "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "category": "Professional"
+    },
+    {
       "title": "AI Money Manager",
       "date": "01/02/2025",
       "description": "An AI-powered budgeting and financial management platform built with Next.js and Supabase. Uses Gemini API for AI-driven spending insights, Clerk for secure authentication, Arcjet for automated email reports, and Inngest for serverless workflow automation. Helps users track multiple accounts and make smarter financial decisions.",
       "url": "https://github.com/Jitenmohanty/NextJs_Projects/tree/master/money_manager_ai",
       "demo": "https://next-js-projects-4kry.vercel.app/",
-      "imgSrc": "https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=600"
+      "imgSrc": "https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "category": "Next.js"
     },
     {
       "title": "AI Quiz Platform",
       "date": "10/04/2024",
-      "description": "An AI-powered quiz application built with Node.js, Express, and MongoDB. Teachers can upload documents (PDFs, images, text) to automatically generate quizzes using Google Gemini AI, while students can take quizzes, receive instant feedback with explanations, track progress, and compete on topic-wise leaderboards. Includes real-time analytics, authentication, and structured MCQs generation.",
+      "description": "An AI-powered quiz application built with Node.js, Express, and MongoDB. Teachers upload documents (PDFs, images, text) to auto-generate quizzes via Google Gemini AI. Students take quizzes, receive instant feedback with explanations, track progress, and compete on topic-wise leaderboards. Includes real-time analytics and structured MCQ generation.",
       "url": "https://github.com/Jitenmohanty/quiz-genie-academy-pro",
       "demo": "https://quiz-genie-academy-pro.vercel.app/",
-      "imgSrc": "https://images.pexels.com/photos/5428830/pexels-photo-5428830.jpeg"
+      "imgSrc": "https://images.pexels.com/photos/5428830/pexels-photo-5428830.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "category": "Backend"
     },
     {
       "date": "09/12/2023",
-      "title": "E-Commerce",
-      "description": "This a Fullstack MERN app, Which was build using react, Redux, Node, Express, MongoDB also use Stripe for Payments gateways.",
+      "title": "E-Commerce Platform",
+      "description": "Full-stack e-commerce application built with the MERN stack (MongoDB, Express, React, Node.js). Features product catalog, cart management, Redux-based state, user authentication, order tracking, and Stripe payment gateway integration.",
       "url": "https://github.com/Jitenmohanty/EcommerceApp-FullSatck",
       "demo": "https://ecommerce-app-full-satck-jitenmohantys-projects.vercel.app/",
-      "imgSrc": "https://images.pexels.com/photos/34577/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600"
+      "imgSrc": "https://images.pexels.com/photos/34577/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600",
+      "category": "Backend"
     },
     {
       "title": "Morning Brief AI AGENT",
@@ -30,23 +78,26 @@
       "description": "An AI Agent that summarizes daily news using AI models. It scrapes the web, compiles top headlines, and delivers a concise morning brief, acting like your personal news assistant.",
       "url": "https://github.com/Jitenmohanty/Daily_News_Agent",
       "demo": "",
-      "imgSrc": "https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg"
+      "imgSrc": "https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "category": "AI AGENT"
     },
     {
       "title": "Admin Dashboard",
       "date": "10/04/2024",
-      "description": "A fully responsive Admin Dashboard built with React, TypeScript, SCSS, and Chart.js. Includes core admin features such as user management, analytics, data visualization, authentication, and responsive layouts for seamless performance across devices.",
+      "description": "Fully responsive Admin Dashboard built with React, TypeScript, SCSS, and Chart.js. Includes user management, analytics, data visualization, authentication, and responsive layouts for seamless performance across devices.",
       "url": "https://github.com/Jitenmohanty/React-WebDesigns-AdminDashboard",
       "demo": "https://react-admin-dashboard-fawn.vercel.app",
-      "imgSrc": "https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg"
+      "imgSrc": "https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "category": "React"
     },
     {
       "title": "AI Code Reviewer AI AGENT",
       "date": "01/05/2024",
-      "description": "An AI-powered code review agent that reviews your code using advanced LLMs like OpenAI. It provides suggestions, detects bugs, and improves code quality automatically.",
+      "description": "An AI-powered code review agent that reviews code using advanced LLMs. Provides suggestions, detects bugs, and improves code quality automatically — built with Node.js and integrated with the OpenAI API.",
       "url": "https://github.com/Jitenmohanty/Ai_Code_Reviewer",
       "demo": "",
-      "imgSrc": "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600"
+      "imgSrc": "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "category": "AI AGENT"
     },
     {
       "title": "Automated Tweet AI AGENT",
@@ -54,191 +105,215 @@
       "description": "An AI-powered Twitter automation agent that generates and posts tweets about the computer science world. Built with Gemini API and X API, it creates engaging, real-time content automatically.",
       "url": "https://github.com/Jitenmohanty/Tweet_Generator",
       "demo": "",
-      "imgSrc": "https://media.istockphoto.com/id/178894719/photo/blue-twittering-bird-standing-on-the-word-tweet.jpg?s=1024x1024&w=is&k=20&c=WW4qmdUaL9vBj8YgeWW69R88_jMZya_QuUp0Cnnv2Mg="
+      "imgSrc": "https://media.istockphoto.com/id/178894719/photo/blue-twittering-bird-standing-on-the-word-tweet.jpg?s=1024x1024&w=is&k=20&c=WW4qmdUaL9vBj8YgeWW69R88_jMZya_QuUp0Cnnv2Mg=",
+      "category": "AI AGENT"
     },
     {
       "title": "Job Collector AI AGENT",
       "date": "20/05/2024",
-      "description": "An AI Agent that fetches job opportunities matching your resume using the Adzuna API and Gemini AI. It stores jobs with apply links and details directly into Google Sheets for easy tracking and application.",
+      "description": "An AI Agent that fetches job opportunities matching your resume using the Adzuna API and Gemini AI. Stores jobs with apply links and details directly into Google Sheets for easy tracking and application.",
       "url": "https://github.com/Jitenmohanty/Job_Collector_Agent",
       "demo": "",
-      "imgSrc": "https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg"
+      "imgSrc": "https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "category": "AI AGENT"
     },
     {
-      "title": "React Oach Design  Clone",
+      "title": "React Oach Design Clone",
       "date": "20/05/2024",
-      "description": "A pixel-perfect clone of the Oach design website built with React and GSAP. Focused on modern UI/UX with smooth scroll-based animations, fluid transitions, and interactive elements powered by GSAP. The project replicates Oach’s minimal and aesthetic design while showcasing advanced frontend animation techniques for an engaging user experience.",
+      "description": "A pixel-perfect clone of the Oach design website built with React and GSAP. Features smooth scroll-based animations, fluid transitions, and interactive elements — replicating Oach's minimal aesthetic while showcasing advanced frontend animation techniques.",
       "url": "https://github.com/Jitenmohanty/React-WebDesigns",
       "demo": "https://react-web-designs.vercel.app/",
-      "imgSrc": "https://images.pexels.com/photos/777001/pexels-photo-777001.jpeg"
+      "imgSrc": "https://images.pexels.com/photos/777001/pexels-photo-777001.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "category": "UI/UX"
     },
     {
       "date": "25/05/2023",
       "title": "TEXT UTILS",
-      "description": "This is the sample Project On react  Where To learn and show case the Power Of react also some Utility of texts...",
+      "description": "A React utility app for text manipulation — convert case, count words and characters, and remove extra spaces. Built to master core React concepts including state management, controlled components, and event handling.",
       "url": "https://github.com/Jitenmohanty/TextUtils",
       "demo": "https://jitenmohanty.github.io/TextUtils/",
-      "imgSrc": "https://media.istockphoto.com/id/1164644807/photo/person-marking-error-with-red-marker.webp?b=1&s=612x612&w=0&k=20&c=iQXqIp1nQiNZkG_GijxgQfdt8l-uBz9r6HHGDTkADtY="
+      "imgSrc": "https://media.istockphoto.com/id/1164644807/photo/person-marking-error-with-red-marker.webp?b=1&s=612x612&w=0&k=20&c=iQXqIp1nQiNZkG_GijxgQfdt8l-uBz9r6HHGDTkADtY=",
+      "category": "React"
     },
     {
       "date": "01/06/2023",
       "title": "TECHY STAR",
-      "description": "This is the sample project on the Learning phase of React Js , Here I am learn to use Carosuel ....",
+      "description": "A tech news and resources aggregator built with React, featuring carousel components, category filtering, and responsive layouts. Demonstrates core React skills including hooks, context, and composable component architecture.",
       "url": "https://github.com/Jitenmohanty/TechStar",
       "demo": "https://tech-star-iota.vercel.app/",
-      "imgSrc": "https://cdn.pixabay.com/photo/2018/06/07/16/49/virtual-3460451_960_720.jpg"
+      "imgSrc": "https://cdn.pixabay.com/photo/2018/06/07/16/49/virtual-3460451_960_720.jpg",
+      "category": "React"
     },
     {
       "date": "17/07/2023",
       "title": "VIDEO HUB",
-      "description": "This is the sample Project Of Video hub Here i am creating Login and SignUp page also we can Upload a video are You can seen your lecture Material...",
+      "description": "A video-sharing platform built with React and Chakra UI. Features user authentication, video uploads, and a lecture material library. Focused on accessible UI design, clean component architecture, and responsive layouts.",
       "url": "https://github.com/Jitenmohanty/chakra-ui-reack-project-videohub",
       "demo": "https://chakra-ui-reack-project-videohub-git-master-jitenmohanty.vercel.app/",
-      "imgSrc": "https://cdn.pixabay.com/photo/2016/11/21/12/51/mobile-phone-1845233__340.jpg"
+      "imgSrc": "https://cdn.pixabay.com/photo/2016/11/21/12/51/mobile-phone-1845233__340.jpg",
+      "category": "React"
     },
     {
       "date": "10/08/2023",
-      "title": "CRYPTO",
-      "description": "This is the sample Project on Crypto , I am fetching the crypto coin from an api and add some extra stuff .. Like You can track the crypto chart...",
+      "title": "CRYPTO Tracker",
+      "description": "A cryptocurrency tracking app that fetches live coin data from a public API. Users can monitor prices, view historical charts, and track portfolio performance. Built with React and recharts for data visualization.",
       "url": "https://github.com/Jitenmohanty/CryptoAppByReact",
       "demo": "https://crypto-app-by-react.vercel.app/",
-      "imgSrc": "https://cdn.pixabay.com/photo/2017/12/12/12/44/bitcoin-3014614_960_720.jpg"
+      "imgSrc": "https://cdn.pixabay.com/photo/2017/12/12/12/44/bitcoin-3014614_960_720.jpg",
+      "category": "React"
     },
     {
       "date": "10/07/2023",
       "title": "NEWS RUNNER",
-      "description": "This is the sample Project on News Api , All news are showing In catagorically also You can read all articles.",
+      "description": "A news aggregator app that displays articles by category using a News API. Users can browse headlines and read full articles — built with React and focused on async data fetching and conditional rendering.",
       "url": "https://github.com/Jitenmohanty/NewsRunner",
       "demo": "",
-      "imgSrc": "https://media.istockphoto.com/id/1324677867/photo/beautiful-caucasian-female-is-using-laptop-for-chatting-with-fiends-in-social-network-at-home.webp?b=1&s=612x612&w=0&k=20&c=CimmPrqhmHyzn2n1oIAtXkeDiPyrDBPZatXcbSFWekA="
+      "imgSrc": "https://media.istockphoto.com/id/1324677867/photo/beautiful-caucasian-female-is-using-laptop-for-chatting-with-fiends-in-social-network-at-home.webp?b=1&s=612x612&w=0&k=20&c=CimmPrqhmHyzn2n1oIAtXkeDiPyrDBPZatXcbSFWekA=",
+      "category": "React"
     },
     {
       "date": "25/08/2023",
       "title": "REACT CART",
-      "description": "This is the sample Project On react-Redux-Toolkit  Where The stock mangement and cart billings are used By redux...",
+      "description": "A shopping cart app demonstrating stock management and billing with Redux Toolkit. Uses Redux slices for cart state, item quantity controls, and real-time total calculation — a focused study in Redux state architecture.",
       "url": "https://github.com/Jitenmohanty/cart",
       "demo": "https://cart-app-on-react-redux-toolkit.vercel.app/",
-      "imgSrc": "https://cdn.pixabay.com/photo/2019/12/14/08/36/shopping-4694470_960_720.jpg"
+      "imgSrc": "https://cdn.pixabay.com/photo/2019/12/14/08/36/shopping-4694470_960_720.jpg",
+      "category": "React"
     },
     {
       "date": "06/08/2023",
       "title": "CHAT APP",
-      "description": "This is a Major Project On MERN stack where i am using Socket-Io for the Real Time Chatting and add some UI for More Atractive..or some User Authentications..",
+      "description": "Real-time chat application built with the MERN stack and Socket.IO. Features instant messaging, user rooms, online presence indicators, and JWT-based authentication. A deep dive into WebSocket integration and real-time event handling.",
       "url": "https://github.com/Jitenmohanty/ChatAppReactNodejsSocetAuth.git",
       "demo": "",
-      "imgSrc": "https://media.istockphoto.com/id/1217093906/photo/womens-hand-typing-on-mobile-smartphone-live-chat-chatting-on-application-communication.webp?b=1&s=612x612&w=0&k=20&c=musuQuCTEcuaKrsnd1xZdCp51ToAt1qv_od0HKkQD9Q="
+      "imgSrc": "https://media.istockphoto.com/id/1217093906/photo/womens-hand-typing-on-mobile-smartphone-live-chat-chatting-on-application-communication.webp?b=1&s=612x612&w=0&k=20&c=musuQuCTEcuaKrsnd1xZdCp51ToAt1qv_od0HKkQD9Q=",
+      "category": "Backend"
     },
     {
       "date": "04/09/2023",
       "title": "iNoteBook",
-      "description": "This is the sample Project On react  Where To learn and show case the Power Of react also some Utility of texts...",
+      "description": "A cloud-based note-taking app built with the MERN stack. Supports creating, editing, and deleting notes with secure user authentication. Notes persist in MongoDB for access across sessions — a practical full-stack CRUD project.",
       "url": "https://6501446b40687c35e19be9c3--earnest-naiad-dc77cc.netlify.app/",
       "demo": "",
-      "imgSrc": "https://images.freeimages.com/images/large-previews/a39/notes-on-wood-4-1315469.jpg?fmt=webp&w=350"
+      "imgSrc": "https://images.freeimages.com/images/large-previews/a39/notes-on-wood-4-1315469.jpg?fmt=webp&w=350",
+      "category": "Backend"
     },
     {
       "date": "07/09/2023",
-      "title": "PORTFOLIO",
-      "description": "This is the Project That Show Case My Works and Connect With the Techy Freinds..",
+      "title": "PORTFOLIO v1",
+      "description": "My first developer portfolio built with React — showcasing early projects, skills, and a contact section. Marks the beginning of my full-stack journey and continues to evolve with each new role and project.",
       "url": "https://github.com/Jitenmohanty/cart",
       "demo": "https://portfolio-react-me.vercel.app/",
-      "imgSrc": "https://media.istockphoto.com/id/1413884806/photo/financial-advisor-or-lawyer-with-couple-explaining-options.webp?b=1&s=612x612&w=0&k=20&c=diY-qOJ0d947A78yGYXP1An0Ct3S995Erd43yIRiNv4="
+      "imgSrc": "https://media.istockphoto.com/id/1413884806/photo/financial-advisor-or-lawyer-with-couple-explaining-options.webp?b=1&s=612x612&w=0&k=20&c=diY-qOJ0d947A78yGYXP1An0Ct3S995Erd43yIRiNv4=",
+      "category": "React"
     },
     {
       "date": "10/09/2023",
       "title": "Currency Convertor",
-      "description": "This is the sample Project On react  Where To Convert rupee to any currency also Swapping avalaible",
+      "description": "A React currency converter app using live exchange rate APIs. Supports conversion between any two currencies with a swap feature — built using custom hooks to encapsulate the API fetch logic and demonstrate reusable hook patterns.",
       "url": "https://github.com/Jitenmohanty/CurrencyConvertor_Custom_Hooks",
       "demo": "https://https-github-com-jitenmohanty-react-hooks-tree-mas-jitenmohanty.vercel.app/",
-      "imgSrc": "https://images.pexels.com/photos/164527/pexels-photo-164527.jpeg?auto=compress&cs=tinysrgb&w=600"
+      "imgSrc": "https://images.pexels.com/photos/164527/pexels-photo-164527.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "category": "React"
     },
     {
       "date": "15/09/2023",
       "title": "Todo App",
-      "description": "This is the sample Project On react  Where we store our todos also delete and complete tag to help track your todos..",
+      "description": "A React to-do application with localStorage persistence. Supports creating, completing, and deleting tasks with status filters — built to practice controlled components, derived state, and the useEffect lifecycle.",
       "url": "https://github.com/Jitenmohanty/TodoAssignment",
       "demo": "https://todo-assignment-blue.vercel.app/",
-      "imgSrc": "https://images.pexels.com/photos/3299/postit-scrabble-to-do.jpg?auto=compress&cs=tinysrgb&w=600"
+      "imgSrc": "https://images.pexels.com/photos/3299/postit-scrabble-to-do.jpg?auto=compress&cs=tinysrgb&w=600",
+      "category": "React"
     },
     {
       "date": "20/09/2023",
-      "title": "Diseney Hotstar Clone",
-      "description": "This is the sample Project On react  Where we showcase on diseney frontend how work using firebase backend ",
+      "title": "Disney+ Hotstar Clone",
+      "description": "A Disney+ Hotstar frontend clone built with React and Firebase. Replicates the streaming platform's UI including hero banners, content carousels, and category rows. Firebase handles authentication and real-time data.",
       "url": "https://github.com/Jitenmohanty/DesneyHotstar",
       "demo": "https://desney-hotstar-three.vercel.app/",
-      "imgSrc": "https://images.pexels.com/photos/6921010/pexels-photo-6921010.jpeg?auto=compress&cs=tinysrgb&w=600"
+      "imgSrc": "https://images.pexels.com/photos/6921010/pexels-photo-6921010.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "category": "React"
     },
     {
       "date": "29/09/2023",
       "title": "Blog Post",
-      "description": "This is the major Project On react and appWrite Where we post our blogs and also read the other blogs...",
+      "description": "A full-stack blogging platform built with React and Appwrite. Users can create, publish, and read blog posts with rich text editing, authentication, and persistent storage — a practical introduction to BaaS architecture.",
       "url": "https://github.com/Jitenmohanty/FullStackBlogPostWithAppWrite",
       "demo": "https://full-stack-blog-post-with-app-write.vercel.app/",
-      "imgSrc": "https://images.pexels.com/photos/262508/pexels-photo-262508.jpeg?auto=compress&cs=tinysrgb&w=600"
+      "imgSrc": "https://images.pexels.com/photos/262508/pexels-photo-262508.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "category": "React"
     },
     {
       "date": "04/10/2023",
       "title": "Food Recipe Finder",
-      "description": "This is the simple Project On react where we find our recepe on  any type of foods you want to eat...",
+      "description": "A React recipe discovery app that searches an external food API by ingredient or dish name. Displays nutritional info, preparation steps, and ingredient lists — focused on API integration and responsive card layouts.",
       "url": "https://github.com/Jitenmohanty/Food-Finder",
       "demo": "https://food-finder-zeta.vercel.app/",
-      "imgSrc": "https://images.pexels.com/photos/5966431/pexels-photo-5966431.jpeg?auto=compress&cs=tinysrgb&w=600"
+      "imgSrc": "https://images.pexels.com/photos/5966431/pexels-photo-5966431.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "category": "React"
     },
     {
       "date": "15/10/2023",
-      "title": "Instagram Typo Clone",
-      "description": "This is the major Project On react and appwrite where we create our connection and Like, Save and Create and update your posts... ",
+      "title": "Instagram Clone",
+      "description": "A full-stack Instagram-style social app built with React and Appwrite. Users can create accounts, upload posts, like, save, follow others, and browse a personalized feed — implementing a complete social media data model.",
       "url": "https://github.com/Jitenmohanty/Instagram-Typo--Clone",
       "demo": "https://instagram-typo-clone.vercel.app/",
-      "imgSrc": "https://images.pexels.com/photos/2694434/pexels-photo-2694434.jpeg?auto=compress&cs=tinysrgb&w=600"
+      "imgSrc": "https://images.pexels.com/photos/2694434/pexels-photo-2694434.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "category": "React"
     },
     {
-      "date": "1/02/2024",
+      "date": "01/02/2024",
       "title": "Weather App",
-      "description": "This is a Weather app, Where you can find out tempreture and other information of any city you want just type the city name, then shows the result.",
+      "description": "A weather app that displays current temperature, humidity, wind speed, and forecasts for any city using a public weather API. Built with React — focused on async data fetching, error states, and clean data presentation.",
       "url": "https://weather-app-on-react.vercel.app/",
       "demo": "https://weather-app-on-react.vercel.app/",
-      "imgSrc": "https://images.pexels.com/photos/14756719/pexels-photo-14756719.jpeg?auto=compress&cs=tinysrgb&w=6000"
+      "imgSrc": "https://images.pexels.com/photos/14756719/pexels-photo-14756719.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "category": "React"
     },
     {
       "date": "15/02/2024",
       "title": "SUN DOWN Clone",
-      "description": "This is a Sun Down website clone using html css and js also use locomotive and GSAP to build.",
+      "description": "A creative agency website clone replicating the SunDown Studio design using HTML, CSS, JS, Locomotive Scroll, and GSAP. Showcases smooth parallax scrolling, pin-based scroll animations, and precise motion design.",
       "url": "https://github.com/Jitenmohanty/Js_Projects.git",
       "demo": "/",
-      "imgSrc": "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=600"
+      "imgSrc": "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "category": "UI/UX"
     },
     {
       "date": "15/04/2024",
       "title": "Oach Design Clone",
-      "description": "This is a Oach Design website clone using html css and js also use locomotive and GSAP and Framer-motion to build.",
+      "description": "A Oach Design website clone built with React, GSAP, Locomotive Scroll, and Framer Motion. Demonstrates advanced scroll-triggered animations, smooth page transitions, and high-fidelity replication of a premium design studio site.",
       "url": "https://github.com/Jitenmohanty/React-WebDesigns/tree/master/OACH%20Design%20Clone",
       "demo": "/",
-      "imgSrc": "https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg?auto=compress&cs=tinysrgb&w=600"
+      "imgSrc": "https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "category": "UI/UX"
     },
     {
       "date": "15/02/2024",
-      "title": "Next JS Blog",
-      "description": "This is a Next js project, it is a blog app how to handle api on Next js also Like and save feature using Local storage.",
+      "title": "Next.js Blog",
+      "description": "A Next.js blog app demonstrating server-side data fetching, dynamic routing, and API routes. Features post listing, individual article pages, like and save via localStorage — a practical introduction to the Next.js App Router.",
       "url": "https://github.com/Jitenmohanty/NextJs_Projects/tree/master/nextjs_dashboard",
       "demo": "/",
-      "imgSrc": "https://images.pexels.com/photos/261662/pexels-photo-261662.jpeg?auto=compress&cs=tinysrgb&w=600"
+      "imgSrc": "https://images.pexels.com/photos/261662/pexels-photo-261662.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "category": "Next.js"
     },
     {
       "date": "15/02/2024",
-      "title": "Next JS Feedback system",
-      "description": "This is a Next js project where user Login then give the feedback of the app also has AI feature to suggest difforent feedbacks (GEMINI AI)",
+      "title": "Next.js Feedback System",
+      "description": "A Next.js feedback platform where authenticated users submit app reviews with AI-powered suggestion prompts via Gemini AI. Explores Next.js authentication patterns, API routes, and integrating generative AI into a form workflow.",
       "url": "https://github.com/Jitenmohanty/NextJs_Projects/tree/master/next_js_feedback_system",
       "demo": "/",
-      "imgSrc": "https://images.pexels.com/photos/5439449/pexels-photo-5439449.jpeg?auto=compress&cs=tinysrgb&w=600"
+      "imgSrc": "https://images.pexels.com/photos/5439449/pexels-photo-5439449.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "category": "Next.js"
     },
     {
       "date": "15/02/2024",
-      "title": "Quiz builder System",
-      "description": "This is a React project where user create his own project also has User take test of alredy created quiz system.",
+      "title": "Quiz Builder System",
+      "description": "A React quiz builder where users create custom quizzes and take existing ones with instant scoring. Features quiz creation flow, timed questions, answer tracking, and result summaries — a complete CRUD SPA with local state management.",
       "url": "https://github.com/Jitenmohanty/QuizBuilder",
       "demo": "/",
-      "imgSrc": "https://images.pexels.com/photos/4022332/pexels-photo-4022332.jpeg?auto=compress&cs=tinysrgb&w=600"
+      "imgSrc": "https://images.pexels.com/photos/4022332/pexels-photo-4022332.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "category": "React"
     }
   ]
 }

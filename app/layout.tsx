@@ -8,14 +8,32 @@ import AnimatedBackground from "@/components/animated-background";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Jiten Mohanty | Frontend Developer",
+  metadataBase: new URL("https://jitenmohanty.vercel.app"),
+  title: "Jiten Mohanty | Full Stack Developer",
   description:
-    "Portfolio of Jiten Mohanty, a dedicated full-stack web developer with expertise in React, Next.js, Node.js and more.",
-  keywords: ["frontend developer", "full-stack developer", "React", "Next.js", "Node.js", "Jiten Mohanty"],
+    "Portfolio of Jiten Mohanty — Full Stack Developer specializing in Next.js, React, Node.js, PostgreSQL, and AI integrations. Building scalable web apps and AI-powered platforms from Bhubaneswar, India.",
+  keywords: [
+    "Jiten Mohanty",
+    "Full Stack Developer",
+    "React Developer",
+    "Next.js Developer",
+    "Node.js Developer",
+    "TypeScript Developer",
+    "PostgreSQL",
+    "MongoDB",
+    "Redis",
+    "Docker",
+    "AWS",
+    "AI Developer",
+    "AgentHub",
+    "Web Developer India",
+    "Bhubaneswar Developer",
+    "ShelfEx",
+  ],
   openGraph: {
-    title: "Jiten Mohanty | Frontend Developer",
+    title: "Jiten Mohanty | Full Stack Developer",
     description:
-      "Portfolio of Jiten Mohanty, a dedicated full-stack web developer with expertise in React, Next.js, Node.js and more.",
+      "Full Stack Developer specializing in Next.js, React, Node.js, and AI integrations. View projects, experience, and get in touch.",
     url: "https://jitenmohanty.vercel.app",
     siteName: "Jiten Mohanty Portfolio",
     images: [
@@ -23,13 +41,30 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Jiten Mohanty Portfolio",
+        alt: "Jiten Mohanty — Full Stack Developer Portfolio",
       },
     ],
     locale: "en_US",
     type: "website",
   },
-  generator: "v0.dev",
+  twitter: {
+    card: "summary_large_image",
+    title: "Jiten Mohanty | Full Stack Developer",
+    description:
+      "Full Stack Developer specializing in Next.js, React, Node.js, and AI integrations.",
+    images: ["/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({

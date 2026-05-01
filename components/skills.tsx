@@ -57,7 +57,7 @@ const skillCategories = [
   },
   {
     title: "Tools & Platforms",
-    skills: ["Git", "GitHub", "AWS", "Docker", "Prisma"," Drizzle", "Mongoose", "VS Code", "Postman", "n8n"],
+    skills: ["Git", "GitHub", "AWS", "GCP", "Docker", "Prisma"," Drizzle", "Mongoose", "VS Code", "Postman", "n8n"],
   },
 ]
 

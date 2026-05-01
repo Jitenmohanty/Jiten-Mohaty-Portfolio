@@ -2,7 +2,15 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Briefcase, GraduationCap, Award, MapPin, Mail, Phone, User } from "lucide-react";
+import {
+  Briefcase,
+  GraduationCap,
+  Award,
+  MapPin,
+  Mail,
+  Phone,
+  User,
+} from "lucide-react";
 
 export default function About() {
   const personalInfo = [
@@ -16,13 +24,13 @@ export default function About() {
     {
       title: "Full Stack Developer",
       company: "Shelfex, Gurgaon, Haryana",
-      duration: "July 2025 – Present"
+      duration: "July 2025 – Present",
     },
     {
-      title: "Full Stack Web Developer", 
+      title: "Full Stack Web Developer",
       company: "Daya Consultancy Services, Bhubaneswar",
-      duration: "Sept 2024 – July 2025"
-    }
+      duration: "Sept 2024 – July 2025",
+    },
   ];
 
   const education = [
@@ -30,14 +38,14 @@ export default function About() {
       degree: "MCA (Computer Application)",
       institution: "Biju Patnaik University, Rourkela",
       score: "CGPA 8.89",
-      duration: "2020 - 2022"
+      duration: "2020 - 2022",
     },
     {
       degree: "BSC (Mathematics)",
-      institution: "Utkal University, Bhubaneswar", 
+      institution: "Utkal University, Bhubaneswar",
       score: "CGPA 7.04",
-      duration: "2016 - 2019"
-    }
+      duration: "2016 - 2019",
+    },
   ];
 
   const certifications = [
@@ -46,7 +54,7 @@ export default function About() {
     "Core Java Excellence with DSA at Coding Ninjas",
     "Frontend With Excellence at Coding Ninjas",
     "React.js With Excellence at Coding Ninjas",
-    "Backend on Node.js With Excellence at Coding Ninjas"
+    "Backend on Node.js With Excellence at Coding Ninjas",
   ];
 
   return (
@@ -68,7 +76,6 @@ export default function About() {
 
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
-          
           {/* Left Column - Description, Work Experience & Personal Info */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -80,12 +87,25 @@ export default function About() {
             {/* Description */}
             <div className="space-y-4 sm:space-y-6">
               <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
-                As a dedicated full-stack web developer, I possess a comprehensive
-                skill set spanning both frontend and backend technologies. With a
-                solid foundation in HTML, CSS, JavaScript, as well as backend
-                frameworks like Node.js, Express, and database management with
-                MongoDB, I excel in building dynamic and scalable web
-                applications.
+                Full Stack Developer specialized in building scalable web
+                platforms using{" "}
+                <strong className="text-foreground">
+                  PERN, MERN, and Next.js
+                </strong>{" "}
+                stacks. I focus on{" "}
+                <strong className="text-foreground">
+                  backend performance optimization
+                </strong>
+                , containerized microservices with{" "}
+                <strong className="text-foreground">Docker</strong>, and
+                production observability with{" "}
+                <strong className="text-foreground">Grafana</strong>. Currently
+                building AI-driven platforms serving{" "}
+                <strong className="text-foreground">
+                  Fortune 500 FMCG clients including PepsiCo
+                </strong>{" "}
+                — where I reduced server CPU from 90% to 2% and cut image
+                recognition latency from 30s to 10s.
               </p>
             </div>
 
@@ -97,7 +117,6 @@ export default function About() {
                   Professional Experience
                 </h3>
                 <div className="space-y-6 sm:space-y-8">
-                  
                   {/* ShelfEx */}
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
@@ -107,7 +126,9 @@ export default function About() {
                     className="border-l-4 border-primary/30 pl-4 sm:pl-6"
                   >
                     <div className="mb-3">
-                      <p className="font-semibold text-base sm:text-lg">Full Stack Developer</p>
+                      <p className="font-semibold text-base sm:text-lg">
+                        Full Stack Developer
+                      </p>
                       <p className="text-sm sm:text-base text-muted-foreground font-medium">
                         ShelfEx, Gurgaon, Haryana
                       </p>
@@ -117,32 +138,82 @@ export default function About() {
                     </div>
                     <ul className="list-disc list-inside text-xs sm:text-sm text-muted-foreground space-y-1.5 sm:space-y-2 leading-relaxed">
                       <li>
-                        Contributed to <strong className="text-foreground">ShelfScan</strong>, 
-                        an AI-powered product recognition platform achieving 
-                        <strong className="text-foreground"> 95% accuracy</strong> with 
-                        <strong className="text-foreground"> &lt;2s inference</strong> time.
+                        Built core backend modules for{" "}
+                        <strong className="text-foreground">ShelfScan</strong>,
+                        an AI-powered retail recognition platform serving
+                        <strong className="text-foreground">
+                          {" "}
+                          10,000+ users
+                        </strong>{" "}
+                        across
+                        <strong className="text-foreground">
+                          {" "}
+                          10L+ stores
+                        </strong>{" "}
+                        for enterprise clients including
+                        <strong className="text-foreground"> PepsiCo</strong>.
                       </li>
                       <li>
-                        Optimized <strong className="text-foreground">PostgreSQL</strong> schemas 
-                        and queries using <strong className="text-foreground">Drizzle ORM</strong>, 
-                        raw SQL, and <code className="bg-muted px-1 rounded text-xs">COPY</code> for 
-                        bulk operations.
+                        Reduced server{" "}
+                        <strong className="text-foreground">
+                          CPU from 90% to 2%
+                        </strong>{" "}
+                        by overhauling query execution plans, adding strategic
+                        indexes, and implementing
+                        <strong className="text-foreground">
+                          {" "}
+                          parallel database connections
+                        </strong>{" "}
+                        — peak query latency now under{" "}
+                        <strong className="text-foreground">2s</strong>.
                       </li>
                       <li>
-                        Implemented robust input validation with 
-                        <strong className="text-foreground"> Zod</strong> and enhanced download 
-                        performance using streaming techniques.
+                        Optimized the{" "}
+                        <strong className="text-foreground">
+                          image recognition pipeline from 30s to 10s
+                        </strong>{" "}
+                        using
+                        <strong className="text-foreground">
+                          {" "}
+                          Worker Threads
+                        </strong>{" "}
+                        and algorithmic code improvements.
                       </li>
                       <li>
-                        Built a scalable bulk email system using 
-                        <strong className="text-foreground"> Bull</strong>, 
-                        <strong className="text-foreground"> Redis queues</strong>, and 
-                        <strong className="text-foreground"> AWS SES</strong>.
+                        Built background job pipelines with
+                        <strong className="text-foreground"> BullMQ</strong>,
+                        <strong className="text-foreground"> Redis</strong>, and
+                        <strong className="text-foreground">
+                          {" "}
+                          AWS SES
+                        </strong>{" "}
+                        handling
+                        <strong className="text-foreground">
+                          {" "}
+                          10k+ daily tasks
+                        </strong>
+                        .
                       </li>
                       <li>
-                        Developed responsive front-end features with 
-                        <strong className="text-foreground"> Next.js</strong> and implemented 
-                        state management using <strong className="text-foreground">Redux</strong>.
+                        Set up production observability with
+                        <strong className="text-foreground">
+                          {" "}
+                          Grafana
+                        </strong>{" "}
+                        dashboards to monitor query latency, CPU usage, and job
+                        throughput in real time.
+                      </li>
+                      <li>
+                        Optimized bulk data handling via
+                        <strong className="text-foreground">
+                          {" "}
+                          Node.js Streams
+                        </strong>{" "}
+                        and improved page performance with{" "}
+                        <strong className="text-foreground">
+                          Next.js SSR/ISR
+                        </strong>
+                        .
                       </li>
                     </ul>
                   </motion.div>
@@ -156,7 +227,9 @@ export default function About() {
                     className="border-l-4 border-primary/30 pl-4 sm:pl-6"
                   >
                     <div className="mb-3">
-                      <p className="font-semibold text-base sm:text-lg">Full Stack Web Developer</p>
+                      <p className="font-semibold text-base sm:text-lg">
+                        Full Stack Web Developer
+                      </p>
                       <p className="text-sm sm:text-base text-muted-foreground font-medium">
                         Daya Consultancy Services, Bhubaneswar, Odisha
                       </p>
@@ -166,24 +239,46 @@ export default function About() {
                     </div>
                     <ul className="list-disc list-inside text-xs sm:text-sm text-muted-foreground space-y-1.5 sm:space-y-2 leading-relaxed">
                       <li>
-                        Developed enterprise applications: <strong className="text-foreground">CRM system</strong>, 
-                        customizable <strong className="text-foreground">Invoice Generator with BI Dashboard</strong>, 
-                        and Social Media Automation Tool.
+                        Developed enterprise applications:{" "}
+                        <strong className="text-foreground">CRM system</strong>,
+                        customizable{" "}
+                        <strong className="text-foreground">
+                          Invoice Generator with BI Dashboard
+                        </strong>
+                        , and Social Media Automation Tool.
                       </li>
                       <li>
-                        Integrated <strong className="text-foreground">Razorpay</strong> & 
-                        <strong className="text-foreground"> PhonePe</strong> payment gateways, 
-                        improving payment success rate by <strong className="text-foreground">25%</strong>.
+                        Integrated{" "}
+                        <strong className="text-foreground">Razorpay</strong> &
+                        <strong className="text-foreground"> PhonePe</strong>{" "}
+                        payment gateways, improving payment success rate by{" "}
+                        <strong className="text-foreground">25%</strong>.
                       </li>
                       <li>
-                        Implemented <strong className="text-foreground">XLSX bulk import</strong> functionality 
-                        in CRM system for efficient multi-record data entry.
+                        Implemented{" "}
+                        <strong className="text-foreground">
+                          XLSX bulk import
+                        </strong>{" "}
+                        functionality in CRM system for efficient multi-record
+                        data entry.
                       </li>
                       <li>
-                        Enhanced application security and scalability using 
-                        <strong className="text-foreground"> JWT authentication</strong>, 
-                        <strong className="text-foreground"> Redis caching</strong>, and 
-                        <strong className="text-foreground"> Docker containerization</strong>.
+                        Enhanced application security and scalability using
+                        <strong className="text-foreground">
+                          {" "}
+                          JWT authentication
+                        </strong>
+                        ,
+                        <strong className="text-foreground">
+                          {" "}
+                          Redis caching
+                        </strong>
+                        , and
+                        <strong className="text-foreground">
+                          {" "}
+                          Docker containerization
+                        </strong>
+                        .
                       </li>
                     </ul>
                   </motion.div>
@@ -224,7 +319,6 @@ export default function About() {
 
           {/* Right Column - Experience, Education, Certifications */}
           <div className="space-y-6">
-            
             {/* Work Experience */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}

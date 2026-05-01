@@ -308,26 +308,40 @@ export default function Projects() {
                         </p>
                       </CardContent>
                       <CardFooter className="p-6 pt-0 flex justify-between" onClick={(e) => e.stopPropagation()}>
-                        <Link
-                          href={project.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Button variant="outline" size="sm" className="gap-2">
+                        {project.demo ? (
+                          <Link
+                            href={project.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Button variant="outline" size="sm" className="gap-2">
+                              <ExternalLink className="h-4 w-4" />
+                              Live Demo
+                            </Button>
+                          </Link>
+                        ) : (
+                          <Button variant="outline" size="sm" className="gap-2" disabled>
                             <ExternalLink className="h-4 w-4" />
                             Live Demo
                           </Button>
-                        </Link>
-                        <Link
-                          href={project.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Button variant="ghost" size="sm" className="gap-2">
+                        )}
+                        {project.url ? (
+                          <Link
+                            href={project.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Button variant="ghost" size="sm" className="gap-2">
+                              <Github className="h-4 w-4" />
+                              Code
+                            </Button>
+                          </Link>
+                        ) : (
+                          <Button variant="ghost" size="sm" className="gap-2" disabled>
                             <Github className="h-4 w-4" />
                             Code
                           </Button>
-                        </Link>
+                        )}
                       </CardFooter>
                     </Card>
                   </motion.div>
