@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dialog";
 
 const AGENT_EMBED_URL =
-  "http://localhost:3000/a/jiten-mohanty-s-business-i6g0";
+  "https://voice-agent-hub.vercel.app/a/jiten-mohanty-s-business-i6g0";
 
 export default function TalkToMe() {
   const [open, setOpen] = useState(false);
