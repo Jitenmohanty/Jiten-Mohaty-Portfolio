@@ -3,7 +3,7 @@
     {
       "title": "ShelfScan — AI Product Recognition",
       "date": "01/07/2025",
-      "description": "Enterprise AI-powered product recognition platform built at ShelfEx, achieving 95% scan accuracy with sub-2s inference. Developed with Next.js and Redux on the frontend, PostgreSQL with Drizzle ORM for schema design, and bulk email workflows via Bull/Redis queues and AWS SES. Implemented Zod validation and streaming download performance — serving real-time shelf-auditing for FMCG clients.",
+      "description": "Enterprise AI-powered retail recognition platform built at ShelfEx, serving 10,000+ users across 10L+ stores and processing 10,000+ daily image recognitions at 95% accuracy for Fortune 500 FMCG clients including PepsiCo. Reduced server CPU from 90% to 2% via query-plan overhauls, strategic indexes, and parallel DB connections (peak latency under 2s), and cut the recognition pipeline from 30s to 10s using Worker Threads. Built with Next.js (SSR/ISR), PostgreSQL + Drizzle ORM, Dockerized microservices, and BullMQ + Redis + AWS SES job pipelines handling 10k+ daily tasks — observed in real time via Grafana.",
       "url": "",
       "demo": "",
       "imgSrc": "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -12,7 +12,7 @@
     {
       "title": "AgentHub — Voice AI Platform",
       "date": "01/04/2025",
-      "description": "A voice AI platform for small businesses powered by Gemini Live. Business owners deploy trained voice agents for customer calls with zero setup. Features multi-agent management, embed widgets, session-based conversations, and a real-time call dashboard. Powers the 'Talk to my AI' widget on this portfolio — click the floating button to try it live.",
+      "description": "A SaaS platform where businesses create AI voice agents trained on their own data (menus, FAQs, inventory) and embed them as a widget — callers talk via Gemini Live WebSocket, and leads are analyzed by Claude Sonnet 4 and delivered in real time. Implemented RAG with pgvector (768d embeddings), Stripe billing with quota enforcement, Inngest durable background jobs, HMAC-SHA256 signed webhooks, and LangSmith observability tracing. Powers the 'Talk to my AI' widget on this portfolio — click the floating button to try it live.",
       "url": "https://github.com/Jitenmohanty/VOICE_AgentHub",
       "demo": "https://voice-agent-hub.vercel.app/",
       "imgSrc": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -48,7 +48,7 @@
     {
       "title": "AI Money Manager",
       "date": "01/02/2025",
-      "description": "An AI-powered budgeting and financial management platform built with Next.js and Supabase. Uses Gemini API for AI-driven spending insights, Clerk for secure authentication, Arcjet for automated email reports, and Inngest for serverless workflow automation. Helps users track multiple accounts and make smarter financial decisions.",
+      "description": "A fullstack AI budgeting platform built with Next.js, Supabase, and Prisma. Uses the Gemini API for AI-driven spending insights, Clerk for secure authentication, Arcjet for rate limiting, and Inngest for automated serverless workflows. Helps users track multiple accounts and make smarter financial decisions.",
       "url": "https://github.com/Jitenmohanty/NextJs_Projects/tree/master/money_manager_ai",
       "demo": "https://next-js-projects-4kry.vercel.app/",
       "imgSrc": "https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=600",

@@ -29,7 +29,7 @@ export default function About() {
     {
       title: "Full Stack Web Developer",
       company: "Daya Consultancy Services, Bhubaneswar",
-      duration: "Sept 2024 – July 2025",
+      duration: "Sept 2024 – June 2025",
     },
   ];
 
@@ -234,51 +234,36 @@ export default function About() {
                         Daya Consultancy Services, Bhubaneswar, Odisha
                       </p>
                       <p className="text-xs sm:text-sm text-muted-foreground">
-                        Sept 2024 – July 2025
+                        Sept 2024 – June 2025
                       </p>
                     </div>
                     <ul className="list-disc list-inside text-xs sm:text-sm text-muted-foreground space-y-1.5 sm:space-y-2 leading-relaxed">
                       <li>
-                        Developed enterprise applications:{" "}
-                        <strong className="text-foreground">CRM system</strong>,
-                        customizable{" "}
-                        <strong className="text-foreground">
-                          Invoice Generator with BI Dashboard
-                        </strong>
-                        , and Social Media Automation Tool.
+                        Built a{" "}
+                        <strong className="text-foreground">PERN-based CRM</strong>{" "}
+                        with real-time dashboards, lead management, and secure{" "}
+                        <strong className="text-foreground">RBAC + JWT</strong>{" "}
+                        auth using HTTP-only cookie sessions.
                       </li>
                       <li>
-                        Integrated{" "}
-                        <strong className="text-foreground">Razorpay</strong> &
-                        <strong className="text-foreground"> PhonePe</strong>{" "}
-                        payment gateways, improving payment success rate by{" "}
-                        <strong className="text-foreground">25%</strong>.
-                      </li>
-                      <li>
-                        Implemented{" "}
+                        Managed a multi-container{" "}
                         <strong className="text-foreground">
-                          XLSX bulk import
+                          Docker Compose
                         </strong>{" "}
-                        functionality in CRM system for efficient multi-record
-                        data entry.
+                        setup (Node.js, PostgreSQL, Redis) with{" "}
+                        <strong className="text-foreground">CI/CD</strong> on{" "}
+                        <strong className="text-foreground">AWS EC2</strong>.
                       </li>
                       <li>
-                        Enhanced application security and scalability using
-                        <strong className="text-foreground">
-                          {" "}
-                          JWT authentication
-                        </strong>
-                        ,
-                        <strong className="text-foreground">
-                          {" "}
-                          Redis caching
-                        </strong>
-                        , and
-                        <strong className="text-foreground">
-                          {" "}
-                          Docker containerization
-                        </strong>
-                        .
+                        Created a social media automation system with{" "}
+                        <strong className="text-foreground">OAuth 2.0</strong>{" "}
+                        using Google, Facebook Graph, and X APIs.
+                      </li>
+                      <li>
+                        Cut REST API latency by{" "}
+                        <strong className="text-foreground">25%</strong> using DB
+                        indexing and{" "}
+                        <strong className="text-foreground">Redis caching</strong>.
                       </li>
                     </ul>
                   </motion.div>

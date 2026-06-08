@@ -45,19 +45,27 @@ const skillIcons: Record<string, JSX.Element> = {
 const skillCategories = [
   {
     title: "Languages",
-    skills: ["HTML", "CSS", "JavaScript", "TypeScript", "Python"],
+    skills: ["JavaScript", "TypeScript", "Python", "Java", "HTML5", "CSS3", "SQL"],
   },
   {
     title: "Frontend",
-    skills: ["React.js", "Next.js", "Redux", "Context Api", "TailwindCSS", "Bootstrap"],
+    skills: ["React.js", "Next.js", "Redux Toolkit", "Zustand", "Tailwind CSS", "Bootstrap"],
   },
   {
     title: "Backend",
-    skills: ["Node.js", "Express.js", "MongoDB", "PostgreSQL", "Sql", "Redis", "FastApi"],
+    skills: ["Node.js", "Express.js", "REST APIs", "Flask", "FastAPI", "Socket.io", "WebRTC"],
   },
   {
-    title: "Tools & Platforms",
-    skills: ["Git", "GitHub", "AWS", "GCP", "Docker", "Prisma"," Drizzle", "Mongoose", "VS Code", "Postman", "n8n"],
+    title: "Database",
+    skills: ["PostgreSQL", "MongoDB", "Supabase", "Prisma", "Drizzle ORM", "Mongoose"],
+  },
+  {
+    title: "DevOps & Cloud",
+    skills: ["AWS", "Docker", "Docker Compose", "Redis", "BullMQ", "Grafana", "Git", "Linux"],
+  },
+  {
+    title: "Tools & Frameworks",
+    skills: ["JWT", "Zod", "NextAuth", "Stripe", "Gemini API", "Inngest", "LangSmith", "pgvector", "Postman"],
   },
 ]
 
@@ -137,7 +145,7 @@ export default function Skills() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
             >
               {skillCategories.map((category, index) => (
                 <motion.div key={index} variants={itemVariants}>

@@ -62,19 +62,15 @@ export default function Hero() {
               sequence={[
                 "Full Stack Developer",
                 1000,
-                "System Design",
+                "PERN / MERN / Next.js",
                 1000,
-                "Backend Developer",
+                "Backend Performance Engineer",
                 1000,
-                "Frontend Developer",
+                "Docker & Microservices",
                 1000,
-                "React.js Developer",
+                "AI Platform Developer",
                 1000,
-                "Next.js Developer",
-                1000,
-                "Docker",
-                1000,
-                "GCP, AWS",
+                "Node.js & PostgreSQL",
                 1000,
               ]}
               wrapper="span"
@@ -88,7 +84,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.8 }}
             className="text-foreground/70 text-lg max-w-md"
           >
-            A dedicated full-stack web developer with expertise in React, Next.js, Node.js and more.
+            Full Stack Developer building scalable, performance-tuned platforms — currently powering AI-driven retail products for Fortune 500 FMCG clients including PepsiCo.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
