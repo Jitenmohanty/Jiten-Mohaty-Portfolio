@@ -443,6 +443,22 @@
     background: rgba(248, 113, 113, 0.07);
     color: #fecaca;
   }
+
+  .motion-root {
+    min-height: 100vh;
+  }
+
+  .scroll-progress {
+    position: fixed;
+    z-index: 100;
+    inset: 0 0 auto;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left center;
+    background: var(--gradient);
+    box-shadow: 0 0 12px rgba(124, 92, 255, 0.42);
+    pointer-events: none;
+  }
 }
 
 @keyframes chip-float {
@@ -479,4 +495,109 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+
+  .metric-fill {
+    transform: scaleX(1);
+  }
+
+  .experience-line {
+    transform: scaleY(1);
+  }
+
+  .scroll-progress {
+    display: none;
+  }
+}
+
+html:not(.dark) main :is(#impact, #about, #experience, #skills, #projects, #contact) .surface-card {
+  background-color: var(--surface);
+  color: var(--text);
+  box-shadow: 0 12px 36px rgba(15, 20, 35, 0.06);
+}
+
+html:not(.dark) main :is(#impact, #about, #experience, #skills, #projects, #contact) [class*="text-white"] {
+  color: var(--text) !important;
+}
+
+html:not(.dark) main :is(#impact, #about, #experience, #skills, #projects, #contact) [class*="text-white/"] {
+  color: var(--muted) !important;
+}
+
+html:not(.dark) main :is(#impact, #about, #experience, #skills, #projects, #contact) [class*="border-white"] {
+  border-color: rgba(11, 12, 16, 0.1) !important;
+}
+
+html:not(.dark) main :is(#impact, #about, #experience, #skills, #projects, #contact) [class*="bg-white/"] {
+  background-color: var(--surface-2) !important;
+}
+
+html:not(.dark) main :is(#impact, #about, #experience, #skills, #projects, #contact) [class*="text-cyan-"] {
+  color: #0e7490 !important;
+}
+
+html:not(.dark) main :is(#impact, #about, #experience, #skills, #projects, #contact) [class*="text-violet-"] {
+  color: #5b3bdb !important;
+}
+
+html:not(.dark) .metric-text {
+  color: #0e7490;
+}
+
+html:not(.dark) .dark-image-overlay {
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+html:not(.dark) main #projects .dark-image-overlay [class*="text-cyan-"] {
+  color: #67e8f9 !important;
+}
+
+html:not(.dark) .project-filter-active-label {
+  color: #fff !important;
+}
+
+html:not(.dark) .button-primary {
+  color: #fff;
+}
+
+html:not(.dark) .hero-copy [class*="text-white"] {
+  color: var(--text) !important;
+}
+
+html:not(.dark) .hero-copy [class*="text-[#9aa0b4]"] {
+  color: var(--muted) !important;
+}
+
+html:not(.dark) .hero-copy [class*="border-white"] {
+  border-color: rgba(11, 12, 16, 0.12) !important;
+}
+
+html:not(.dark) .hero-copy [class*="bg-white/"] {
+  background-color: rgba(11, 12, 16, 0.035) !important;
+}
+
+html:not(.dark) .hero-stats {
+  border-color: rgba(11, 12, 16, 0.12);
+}
+
+html:not(.dark) .hero-stats p:first-child {
+  color: var(--text);
+}
+
+html:not(.dark) .hero-stats p:last-child {
+  color: var(--muted);
+}
+
+html:not(.dark) .skill-marquee-chip {
+  border-color: rgba(11, 12, 16, 0.1);
+  background: #fff;
+  color: #62697b;
+}
+
+html:not(.dark) .form-status-success {
+  color: #047857;
+}
+
+html:not(.dark) .form-status-error {
+  color: #b91c1c;
 }

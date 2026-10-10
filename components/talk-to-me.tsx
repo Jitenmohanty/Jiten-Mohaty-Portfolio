@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { X } from "lucide-react";
 import {
   Dialog,
@@ -16,10 +16,23 @@ const AGENT_EMBED_URL =
 export default function TalkToMe() {
   const [open, setOpen] = useState(false);
   const [bubbleVisible, setBubbleVisible] = useState(false);
+  const reduceMotion = useReducedMotion();
+  const [widgetVisible, setWidgetVisible] = useState(false);
 
   useEffect(() => {
-    const t = setTimeout(() => setBubbleVisible(true), 1200);
-    return () => clearTimeout(t);
+    const updateVisibility = () => {
+      const pastHero = window.scrollY > window.innerHeight * 0.85;
+      const isMobile = window.matchMedia("(max-width: 639px)").matches;
+      setWidgetVisible(pastHero);
+      setBubbleVisible(pastHero && !isMobile);
+    };
+    updateVisibility();
+    window.addEventListener("scroll", updateVisibility, { passive: true });
+    window.addEventListener("resize", updateVisibility);
+    return () => {
+      window.removeEventListener("scroll", updateVisibility);
+      window.removeEventListener("resize", updateVisibility);
+    };
   }, []);
 
   const dismissBubble = () => setBubbleVisible(false);
@@ -29,6 +42,8 @@ export default function TalkToMe() {
     setOpen(true);
   };
 
+  if (!widgetVisible) return null;
+
   return (
     <>
       {/* Floating widget — fixed bottom-right */}
@@ -37,22 +52,19 @@ export default function TalkToMe() {
           {bubbleVisible && (
             <motion.div
               key="bubble"
-              initial={{ opacity: 0, y: 10, scale: 0.9 }}
+              initial={reduceMotion ? false : { opacity: 0, y: 10, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 10, scale: 0.9 }}
-              transition={{ duration: 0.25 }}
-              className="relative max-w-[260px] rounded-2xl rounded-br-sm bg-background border border-border shadow-lg px-4 py-3 pr-8 cursor-pointer hover:shadow-xl transition-shadow"
-              onClick={openModal}
-              role="button"
-              aria-label="Talk to Jiten's AI"
+              transition={{ duration: reduceMotion ? 0 : 0.25 }}
+              className="glass-panel relative max-w-[260px] rounded-2xl rounded-br-sm px-4 py-3 pr-8 text-foreground shadow-2xl"
             >
               <p className="text-sm font-medium leading-snug">
                 <span className="mr-1">👋</span> Hi! You can talk directly
                 to <span className="text-primary">Jiten</span>.
               </p>
-              <p className="text-xs text-muted-foreground mt-1">
+              <button type="button" onClick={openModal} className="mt-1 text-left text-xs text-muted-foreground transition-colors hover:text-cyan-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">
                 Tap to start a voice call.
-              </p>
+              </button>
               <button
                 onClick={(e) => {
                   e.stopPropagation();
@@ -64,7 +76,7 @@ export default function TalkToMe() {
                 <X className="h-3.5 w-3.5" />
               </button>
               {/* tail */}
-              <span className="absolute -bottom-1.5 right-4 h-3 w-3 rotate-45 bg-background border-r border-b border-border" />
+              <span className="absolute -bottom-1.5 right-4 h-3 w-3 rotate-45 border-b border-r border-white/10 bg-[#0e1016]" />
             </motion.div>
           )}
         </AnimatePresence>
@@ -72,16 +84,16 @@ export default function TalkToMe() {
         <motion.button
           onClick={openModal}
           aria-label="Talk to Jiten's AI assistant"
-          initial={{ scale: 0, opacity: 0 }}
+          initial={reduceMotion ? false : { scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.4 }}
-          whileHover={{ scale: 1.06 }}
-          whileTap={{ scale: 0.94 }}
-          className="relative h-14 w-14 sm:h-16 sm:w-16 rounded-full bg-primary text-primary-foreground shadow-[0_12px_40px_rgba(0,0,0,0.18)] flex items-center justify-center overflow-visible"
+          transition={reduceMotion ? { duration: 0 } : { type: "spring", stiffness: 260, damping: 20, delay: 0.4 }}
+          whileHover={reduceMotion ? undefined : { scale: 1.06 }}
+          whileTap={reduceMotion ? undefined : { scale: 0.94 }}
+          className="relative flex h-14 w-14 items-center justify-center overflow-visible rounded-full bg-gradient-to-br from-[#7c5cff] to-[#22d3ee] text-white shadow-[0_12px_40px_rgba(124,92,255,0.34)] sm:h-16 sm:w-16"
         >
           {/* pulsing ring */}
-          <span className="absolute inset-0 rounded-full bg-primary/40 animate-ping" />
-          <span className="absolute inset-0 rounded-full ring-2 ring-primary/30" />
+          <span className="absolute inset-0 rounded-full bg-violet-400/35 animate-ping" />
+          <span className="absolute inset-0 rounded-full ring-2 ring-cyan-100/25" />
 
           {/* Agent SVG — friendly headset bot */}
           <svg
@@ -137,7 +149,7 @@ export default function TalkToMe() {
 
       {/* Modal with embedded iframe */}
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="sm:max-w-[440px] p-0 overflow-hidden">
+        <DialogContent className="glass-panel max-h-[94svh] max-w-[calc(100vw-1.5rem)] overflow-y-auto border-white/10 bg-[#0e1016]/95 p-0 sm:max-w-[440px]">
           <DialogHeader className="px-5 pt-5 pb-3">
             <DialogTitle className="text-base sm:text-lg">
               Talk to Jiten&apos;s AI

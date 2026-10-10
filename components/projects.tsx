@@ -56,8 +56,29 @@ function ProjectImage({ src, alt, priority = false }: { src: string; alt: string
     <div className="project-image relative h-full w-full overflow-hidden bg-[#141722]">
       {!loaded && <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-violet-500/15 via-white/[0.035] to-cyan-400/10" aria-hidden="true" />}
       {failed ? (
-        <div className="absolute inset-0 grid place-items-center bg-gradient-to-br from-violet-500/15 via-[#11131b] to-cyan-400/10" aria-label={`${alt} preview unavailable`}>
-          <span className="font-heading text-4xl font-semibold tracking-[-0.06em] text-white/60">JM<span className="text-cyan-300">.</span></span>
+        <div role="img" aria-label={`${alt}, interface mockup`} className="project-mockup absolute inset-0 grid place-items-center overflow-hidden bg-gradient-to-br from-[#15122a] via-[#10131b] to-[#0a2029] p-4 sm:p-7">
+          <div className="project-mockup-glow absolute -right-12 -top-14 size-48 rounded-full bg-violet-500/20 blur-3xl" aria-hidden="true" />
+          <div className="relative w-full max-w-[430px] rounded-xl border border-white/10 bg-[#0b0e15]/90 p-3 shadow-[0_22px_60px_rgba(0,0,0,0.45)] backdrop-blur sm:rounded-2xl sm:p-4">
+            <div className="mb-3 flex items-center justify-between border-b border-white/[0.08] pb-2.5">
+              <div className="flex items-center gap-1.5" aria-hidden="true"><span className="size-1.5 rounded-full bg-rose-400" /><span className="size-1.5 rounded-full bg-amber-300" /><span className="size-1.5 rounded-full bg-emerald-400" /></div>
+              <span className="font-mono text-[0.5rem] uppercase tracking-[0.12em] text-white/50">Project preview</span>
+              <span className="size-2 rounded-full bg-emerald-400 shadow-[0_0_14px_rgba(52,211,153,0.6)]" />
+            </div>
+            <div className="mb-3 flex items-center justify-between gap-2">
+              <div><p className="font-mono text-[0.48rem] uppercase tracking-[0.1em] text-cyan-200/75">Jiten Mohanty · Selected work</p><p className="mt-1 line-clamp-1 font-heading text-xs font-semibold text-white sm:text-sm">{alt.replace(/ (project )?preview$/i, "")}</p></div>
+              <span className="rounded-md border border-violet-200/15 bg-violet-300/10 px-2 py-1 font-mono text-[0.48rem] text-violet-100">UI</span>
+            </div>
+            <div className="grid grid-cols-[1fr_1fr] gap-2">
+              <div className="rounded-lg border border-white/[0.08] bg-white/[0.035] p-2">
+                <div className="mb-2 flex items-center justify-between"><span className="font-mono text-[0.43rem] text-white/45">OVERVIEW</span><span className="size-1 rounded-full bg-cyan-300" /></div>
+                <div className="space-y-1.5"><span className="block h-1.5 w-4/5 rounded-full bg-gradient-to-r from-violet-400/80 to-cyan-300/70" /><span className="block h-1 w-3/5 rounded-full bg-white/15" /><span className="block h-1 w-2/3 rounded-full bg-white/10" /></div>
+              </div>
+              <div className="rounded-lg border border-white/[0.08] bg-white/[0.035] p-2">
+                <div className="mb-2 flex items-center justify-between"><span className="font-mono text-[0.43rem] text-white/45">ACTIVITY</span><span className="font-mono text-[0.43rem] text-cyan-100">TREND</span></div>
+                <div className="flex h-5 items-end gap-1" aria-hidden="true">{[38, 62, 45, 78, 58, 92, 70, 100].map((height, index) => <span key={index} className="flex-1 rounded-t-sm bg-gradient-to-t from-violet-500/45 to-cyan-300/70" style={{ height: `${height}%` }} />)}</div>
+              </div>
+            </div>
+          </div>
         </div>
       ) : (
         <Image
@@ -83,10 +104,10 @@ function FeaturedProject({ project }: { project: Project }) {
     <article className="project-feature surface-card overflow-hidden" data-reveal>
       <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
         <div className="group relative min-h-[280px] overflow-hidden bg-[#141722] sm:min-h-[360px] lg:min-h-full">
-          <ProjectImage src={project.imgSrc} alt={`${project.title} project preview`} priority />
-          <div className="absolute left-5 top-5 rounded-full border border-white/15 bg-black/45 px-3 py-1.5 font-mono text-[0.62rem] uppercase tracking-[0.12em] text-white/80 backdrop-blur-md">Featured · ShelfEx</div>
+          <ProjectImage src="" alt={`${project.title} project preview`} priority />
+          <div className="dark-image-overlay absolute left-5 top-5 rounded-full border border-white/15 bg-black/45 px-3 py-1.5 font-mono text-[0.62rem] uppercase tracking-[0.12em] text-white/80 backdrop-blur-md">Featured · ShelfEx</div>
           <div className="absolute bottom-5 left-5 right-5 flex flex-wrap gap-2">
-            {["10,000+ users", "10L+ stores", "95% accuracy"].map((metric) => <span key={metric} className="rounded-full border border-white/15 bg-black/45 px-3 py-1.5 font-mono text-[0.62rem] text-white/90 backdrop-blur-md">{metric}</span>)}
+            {["10,000+ users", "10L+ stores", "95% accuracy"].map((metric) => <span key={metric} className="dark-image-overlay rounded-full border border-white/15 bg-black/45 px-3 py-1.5 font-mono text-[0.62rem] text-white/90 backdrop-blur-md">{metric}</span>)}
           </div>
         </div>
 
@@ -123,7 +144,7 @@ function FeaturedProject({ project }: { project: Project }) {
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const handlePointerMove = (event: PointerEvent<HTMLElement>) => {
-    if (event.pointerType !== "mouse") return;
+    if (event.pointerType !== "mouse" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const card = event.currentTarget;
     const bounds = card.getBoundingClientRect();
     const x = (event.clientX - bounds.left) / bounds.width;
@@ -141,17 +162,17 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
   const tags = getProjectTags(project);
   return (
+    <div className="h-full" data-reveal>
     <article
       className="project-card surface-card group relative flex h-full flex-col overflow-hidden"
       onPointerMove={handlePointerMove}
       onPointerLeave={resetPointer}
       style={{ "--spotlight-x": "50%", "--spotlight-y": "50%" } as ProjectStyle}
-      data-reveal
     >
       <div className="project-spotlight pointer-events-none absolute inset-0 z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden="true" />
       <div className="project-preview group relative aspect-[16/10] overflow-hidden">
         <ProjectImage src={project.imgSrc} alt={`${project.title} preview`} priority={index < 3} />
-        <span className="absolute left-3 top-3 z-10 rounded-full border border-white/15 bg-black/45 px-3 py-1 font-mono text-[0.58rem] text-white/90 backdrop-blur-md">{project.category}</span>
+        <span className="dark-image-overlay absolute left-3 top-3 z-10 rounded-full border border-white/15 bg-black/45 px-3 py-1 font-mono text-[0.58rem] text-white/90 backdrop-blur-md">{project.category}</span>
       </div>
 
       <div className="flex flex-1 flex-col p-4 sm:p-5">
@@ -178,6 +199,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         </div>
       </div>
     </article>
+    </div>
   );
 }
 

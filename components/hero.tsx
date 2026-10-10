@@ -32,8 +32,8 @@ export default function Hero() {
       <div className="hero-cursor-glow pointer-events-none absolute inset-0 opacity-70" aria-hidden="true" />
       <div className="page-container relative w-full">
         <div className="grid items-center gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10">
-          <div className="relative z-10 max-w-[690px]">
-            <p className="eyebrow mb-7 rounded-full border border-white/10 bg-white/[0.035] px-4 py-2.5 text-[0.68rem] text-white/75">
+          <div className="hero-copy relative z-10 max-w-[690px]">
+            <p data-hero-reveal className="eyebrow mb-7 rounded-full border border-white/10 bg-white/[0.035] px-4 py-2.5 text-[0.68rem] text-white/75">
               <span className="relative flex size-2" aria-hidden="true">
                 <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-60" />
                 <span className="relative inline-flex size-2 rounded-full bg-emerald-400" />
@@ -41,11 +41,11 @@ export default function Hero() {
               Available for work
             </p>
 
-            <h1 className="hero-title mb-5 max-w-[12ch] font-heading text-[clamp(3rem,8vw,6.5rem)] font-semibold leading-[1] tracking-[-0.06em] text-white">
+            <h1 data-hero-reveal className="hero-title mb-5 max-w-[12ch] font-heading text-[clamp(3rem,8vw,6.5rem)] font-semibold leading-[1] tracking-[-0.06em] text-white">
               Hi, I&apos;m <span className="gradient-text whitespace-nowrap">Jiten Mohanty</span>
             </h1>
 
-            <div className="mb-5 flex min-h-8 items-center gap-2 font-heading text-lg font-medium text-white/75 sm:text-xl">
+            <div data-hero-reveal className="mb-5 flex min-h-8 items-center gap-2 font-heading text-lg font-medium text-white/75 sm:text-xl">
               <span className="size-1.5 rounded-full bg-cyan-300" aria-hidden="true" />
               <TypeAnimation
                 sequence={[
@@ -63,11 +63,11 @@ export default function Hero() {
               />
             </div>
 
-            <p className="mb-8 max-w-[55ch] text-base leading-[1.75] text-[#9aa0b4] sm:text-[1.0625rem]">
+            <p data-hero-reveal className="mb-8 max-w-[55ch] text-base leading-[1.75] text-[#9aa0b4] sm:text-[1.0625rem]">
               Full Stack Developer building scalable, performance-tuned platforms — currently powering AI-driven retail products for Fortune 500 FMCG clients including PepsiCo.
             </p>
 
-            <div className="flex flex-wrap items-center gap-3">
+            <div data-hero-reveal className="flex flex-wrap items-center gap-3">
               <a
                 href="/resume2.pdf"
                 download="Jiten_resume.pdf"
@@ -97,7 +97,7 @@ export default function Hero() {
               Shipping to production
             </div>
 
-            <div className="glass-panel relative overflow-hidden p-1.5 sm:rounded-[26px]">
+            <div data-hero-reveal className="glass-panel relative overflow-hidden p-1.5 sm:rounded-[26px]">
               <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-200/70 to-transparent" aria-hidden="true" />
               <div className="rounded-[19px] border border-white/[0.045] bg-[#0b0d13]/95 p-4 sm:p-6">
                 <div className="mb-5 flex items-center justify-between border-b border-white/[0.08] pb-4">
@@ -138,7 +138,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="mt-12 grid gap-3 border-t border-white/[0.09] pt-5 sm:grid-cols-3 sm:gap-6 lg:mt-14">
+        <div data-hero-reveal className="hero-stats mt-12 grid gap-3 border-t border-white/[0.09] pt-5 sm:grid-cols-3 sm:gap-6 lg:mt-14">
           {[
             { value: "90% → 2%", label: "Server CPU" },
             { value: "10,000+", label: "Platform users" },

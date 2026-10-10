@@ -15,7 +15,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const scrollToTop = () => {
-    const lenis = (window as Window & { lenis?: { scrollTo: (target: number) => void } }).lenis;
+    const lenis = (window as Window & { __portfolioLenis?: { scrollTo: (target: number) => void } }).__portfolioLenis;
     if (lenis) lenis.scrollTo(0);
     else window.scrollTo({ top: 0, behavior: "smooth" });
   };

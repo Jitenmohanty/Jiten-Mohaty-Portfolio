@@ -29,7 +29,7 @@ export default function ProjectFilter({ categories, onFilterChange, activeFilter
                 transition={{ duration: reduceMotion ? 0 : 0.25, ease: [0.22, 1, 0.36, 1] }}
               />
             )}
-            <span className="relative z-10">{category}</span>
+            <span className={`relative z-10 ${active ? "project-filter-active-label" : ""}`}>{category}</span>
           </button>
         );
       })}

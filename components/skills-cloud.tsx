@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 
 // Define skill colors for better visual appeal
 const skillColors: Record<string, string> = {
@@ -62,9 +62,11 @@ export default function SkillsCloud({ skills }: SkillsCloudProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [isLoaded, setIsLoaded] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const reduceMotion = useReducedMotion()
 
   useEffect(() => {
     let cleanup: (() => void) | null = null
+    let loadingTimeout: ReturnType<typeof setTimeout> | undefined
 
     // Dynamically import Three.js to avoid SSR issues
     import('three').then((THREE) => {
@@ -107,7 +109,6 @@ export default function SkillsCloud({ skills }: SkillsCloudProps) {
         
         // Enhanced sphere distribution with multiple layers
         const baseRadius = 200
-        const layers = Math.ceil(skills.length / 12) // Distribute across layers
         
         skills.forEach((skill, index) => {
           // Calculate layer and position within layer
@@ -249,12 +250,13 @@ export default function SkillsCloud({ skills }: SkillsCloudProps) {
         skillObjects.push(particles)
 
         // Enhanced interaction controls
-        let mouse = { x: 0, y: 0 }
-        let target = { x: 0, y: 0 }
+        const mouse = { x: 0, y: 0 }
+        const target = { x: 0, y: 0 }
         let isInteracting = false
         let lastInteraction = Date.now()
         
         const handleMouseMove = (event: MouseEvent) => {
+          if (reduceMotion) return
           const rect = containerRef.current?.getBoundingClientRect()
           if (!rect) return
           
@@ -285,9 +287,9 @@ export default function SkillsCloud({ skills }: SkillsCloudProps) {
         containerRef.current.addEventListener("mouseleave", handleMouseLeave)
 
         // Animation loop with enhanced interactions
-        let animationId: number
+        let animationId: number | undefined
         const animate = () => {
-          animationId = requestAnimationFrame(animate)
+          if (!reduceMotion) animationId = requestAnimationFrame(animate)
           
           const now = Date.now()
           const timeSinceInteraction = now - lastInteraction
@@ -337,15 +339,16 @@ export default function SkillsCloud({ skills }: SkillsCloudProps) {
 
         window.addEventListener("resize", handleResize)
         
-        // Start animation
+        // Reduced-motion users still get a single rendered, interactive-free scene.
         animate()
         
         // Show loaded state
-        setTimeout(() => setIsLoaded(true), 500)
+        loadingTimeout = setTimeout(() => setIsLoaded(true), reduceMotion ? 0 : 500)
 
         // Setup cleanup function
         cleanup = () => {
-          cancelAnimationFrame(animationId)
+          if (animationId !== undefined) cancelAnimationFrame(animationId)
+          if (loadingTimeout) clearTimeout(loadingTimeout)
           
           // Remove event listeners
           window.removeEventListener("resize", handleResize)
@@ -394,16 +397,17 @@ export default function SkillsCloud({ skills }: SkillsCloudProps) {
     
     // Cleanup on unmount
     return () => {
+      if (loadingTimeout) clearTimeout(loadingTimeout)
       if (cleanup) cleanup()
     }
-  }, [skills])
+  }, [skills, reduceMotion])
 
   if (error) {
     return (
-      <div className="w-full h-[400px] md:h-[500px] lg:h-[600px] bg-gradient-to-b from-red-50 to-red-100 rounded-lg border border-red-200 flex items-center justify-center">
+      <div className="flex h-[400px] w-full items-center justify-center rounded-2xl border border-red-400/20 bg-[#0e1016] md:h-[500px] lg:h-[600px]">
         <div className="text-center">
-          <p className="text-red-600 mb-2">3D Visualization Error</p>
-          <p className="text-red-500 text-sm">{error}</p>
+          <p className="mb-2 text-red-300">3D Visualization Error</p>
+          <p className="text-sm text-red-200/70">{error}</p>
         </div>
       </div>
     )
@@ -413,28 +417,30 @@ export default function SkillsCloud({ skills }: SkillsCloudProps) {
     <div className="relative">
       <motion.div
         ref={containerRef}
-        className="w-full h-[400px] md:h-[500px] lg:h-[600px] bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 rounded-lg border border-slate-700 shadow-2xl overflow-hidden cursor-grab active:cursor-grabbing"
-        initial={{ opacity: 0, scale: 0.95 }}
+        role="img"
+        aria-label="Interactive 3D cloud of Jiten's programming languages, frameworks, and tools."
+        className="h-[400px] w-full cursor-grab overflow-hidden rounded-2xl border border-white/10 bg-[#0b0d13] shadow-2xl active:cursor-grabbing md:h-[500px] lg:h-[600px]"
+        initial={reduceMotion ? false : { opacity: 0, scale: 0.98 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: reduceMotion ? 0 : 0.6, ease: "easeOut" }}
       />
       
       {/* Loading overlay */}
       {!isLoaded && !error && (
         <motion.div 
-          className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 rounded-lg"
+          className="absolute inset-0 flex items-center justify-center rounded-2xl bg-[#0b0d13]"
           initial={{ opacity: 1 }}
           animate={{ opacity: isLoaded ? 0 : 1 }}
           transition={{ duration: 0.5 }}
         >
           <div className="flex flex-col items-center gap-4">
             <div className="relative">
-              <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-purple-400"></div>
-              <div className="animate-ping absolute inset-0 rounded-full h-16 w-16 border-4 border-purple-300 opacity-20"></div>
+              <div className="h-14 w-14 animate-spin rounded-full border-b-2 border-t-2 border-cyan-300"></div>
+              <div className="absolute inset-0 h-14 w-14 animate-ping rounded-full border border-violet-300/30"></div>
             </div>
             <div className="text-center">
-              <p className="text-white text-lg font-medium">Loading 3D Skills Universe</p>
-              <p className="text-purple-300 text-sm mt-1">Preparing interactive experience...</p>
+              <p className="text-lg font-medium text-white">Loading 3D skills cloud</p>
+              <p className="mt-1 text-sm text-white/55">Preparing interactive experience…</p>
             </div>
           </div>
         </motion.div>
@@ -443,10 +449,10 @@ export default function SkillsCloud({ skills }: SkillsCloudProps) {
       {/* Instructions */}
       {isLoaded && (
         <motion.div 
-          className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm border border-white/20"
-          initial={{ opacity: 0, y: 20 }}
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full border border-white/20 bg-black/70 px-4 py-2 text-sm text-white backdrop-blur-sm"
+          initial={reduceMotion ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.5 }}
+          transition={{ delay: reduceMotion ? 0 : 1, duration: reduceMotion ? 0 : 0.5 }}
         >
           🖱️ Move mouse to rotate • 🔄 Scroll to zoom
         </motion.div>
