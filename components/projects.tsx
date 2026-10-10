@@ -1,18 +1,10 @@
 "use client";
 
-import type React from "react";
-
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Calendar, ExternalLink, Github, Search } from "lucide-react";
-import Link from "next/link";
+import { useState, type CSSProperties, type PointerEvent } from "react";
 import Image from "next/image";
+import { ArrowDownRight, ArrowUpRight, ExternalLink, Github, Search } from "lucide-react";
 import projectsData from "@/data/projects.json";
 import ProjectFilter from "./project-filter";
-import { Input } from "@/components/ui/input";
-import ProjectModal from "./project-modal";
 
 type Project = {
   date: string;
@@ -24,363 +16,244 @@ type Project = {
   category?: string;
 };
 
-function ProjectImage({
-  src,
-  alt,
-  priority = false,
-}: {
-  src: string;
-  alt: string;
-  priority?: boolean;
-}) {
+type ProjectStyle = CSSProperties & {
+  "--spotlight-x"?: string;
+  "--spotlight-y"?: string;
+};
+
+const technologyLabels = [
+  "Next.js", "PostgreSQL", "Drizzle", "Docker", "BullMQ", "Redis", "AWS", "Gemini", "React", "Node.js", "TypeScript", "MongoDB", "Stripe", "Prisma", "Python", "Java", "Express", "Supabase", "Tailwind", "Flask", "FastAPI", "WebRTC", "OAuth", "JWT",
+];
+
+function deriveCategory(project: Project) {
+  if (project.category) return project.category;
+  const text = `${project.title} ${project.description}`.toLowerCase();
+  if (/ai|agent|gemini/.test(text)) return "AI AGENT";
+  if (/next\.js/.test(text)) return "Next.js";
+  if (/react/.test(text)) return "React";
+  if (/node|express|api|backend/.test(text)) return "Backend";
+  if (/ui|design/.test(text)) return "UI/UX";
+  return "Other";
+}
+
+const projects = (projectsData.projects as Project[]).map((project) => ({
+  ...project,
+  category: deriveCategory(project),
+}));
+const featuredProject = projects.find((project) => project.title.includes("ShelfScan"));
+const categories = [...new Set(projects.map((project) => project.category).filter((category): category is string => Boolean(category)))];
+
+function getProjectTags(project: Project) {
+  const searchable = `${project.title} ${project.description}`.toLowerCase();
+  return technologyLabels.filter((technology) => searchable.includes(technology.toLowerCase())).slice(0, 4);
+}
+
+function ProjectImage({ src, alt, priority = false }: { src: string; alt: string; priority?: boolean }) {
   const [loaded, setLoaded] = useState(false);
+  const [failed, setFailed] = useState(!src);
+
   return (
-    <>
-      <div
-        className={`absolute inset-0 bg-muted transition-opacity duration-500 ${
-          loaded ? "opacity-0" : "animate-pulse opacity-100"
-        }`}
-        aria-hidden="true"
-      />
-      <Image
-        src={src || "/placeholder.svg?height=400&width=600"}
-        alt={alt}
-        fill
-        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        priority={priority}
-        loading={priority ? undefined : "lazy"}
-        quality={70}
-        onLoad={() => setLoaded(true)}
-        className={`object-cover transition-all duration-500 group-hover:scale-110 ${
-          loaded ? "opacity-100" : "opacity-0"
-        }`}
-      />
-    </>
+    <div className="project-image relative h-full w-full overflow-hidden bg-[#141722]">
+      {!loaded && <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-violet-500/15 via-white/[0.035] to-cyan-400/10" aria-hidden="true" />}
+      {failed ? (
+        <div className="absolute inset-0 grid place-items-center bg-gradient-to-br from-violet-500/15 via-[#11131b] to-cyan-400/10" aria-label={`${alt} preview unavailable`}>
+          <span className="font-heading text-4xl font-semibold tracking-[-0.06em] text-white/60">JM<span className="text-cyan-300">.</span></span>
+        </div>
+      ) : (
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          priority={priority}
+          loading={priority ? undefined : "lazy"}
+          quality={75}
+          onLoad={() => setLoaded(true)}
+          onError={() => { setLoaded(true); setFailed(true); }}
+          className={`object-cover transition-[opacity,transform] duration-500 group-hover:scale-[1.05] ${loaded ? "opacity-100" : "opacity-0"}`}
+        />
+      )}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/5" aria-hidden="true" />
+    </div>
+  );
+}
+
+function FeaturedProject({ project }: { project: Project }) {
+  return (
+    <article className="project-feature surface-card overflow-hidden" data-reveal>
+      <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="group relative min-h-[280px] overflow-hidden bg-[#141722] sm:min-h-[360px] lg:min-h-full">
+          <ProjectImage src={project.imgSrc} alt={`${project.title} project preview`} priority />
+          <div className="absolute left-5 top-5 rounded-full border border-white/15 bg-black/45 px-3 py-1.5 font-mono text-[0.62rem] uppercase tracking-[0.12em] text-white/80 backdrop-blur-md">Featured · ShelfEx</div>
+          <div className="absolute bottom-5 left-5 right-5 flex flex-wrap gap-2">
+            {["10,000+ users", "10L+ stores", "95% accuracy"].map((metric) => <span key={metric} className="rounded-full border border-white/15 bg-black/45 px-3 py-1.5 font-mono text-[0.62rem] text-white/90 backdrop-blur-md">{metric}</span>)}
+          </div>
+        </div>
+
+        <div className="p-5 sm:p-8 lg:p-9">
+          <div className="mb-6 flex flex-wrap items-center gap-2">
+            <span className="eyebrow text-[0.6rem]">{project.category}</span>
+            <span className="size-1 rounded-full bg-white/20" aria-hidden="true" />
+            <span className="font-mono text-[0.63rem] text-muted-foreground">{project.date}</span>
+          </div>
+          <h3 className="mb-4 font-heading text-[clamp(1.8rem,4vw,2.6rem)] font-semibold leading-[1.08] tracking-[-0.05em]">{project.title}</h3>
+          <p className="mb-6 text-sm leading-7 text-muted-foreground">{project.description}</p>
+
+          <div className="grid gap-4 border-y border-white/[0.08] py-5 sm:grid-cols-3">
+            <div><p className="eyebrow mb-2 text-[0.56rem]">Problem</p><p className="text-xs leading-5 text-white/75">Server CPU reached 90%; image recognition took 30 seconds.</p></div>
+            <div><p className="eyebrow mb-2 text-[0.56rem]">Solution</p><p className="text-xs leading-5 text-white/75">Query-plan optimization, indexing, parallel connections, and Worker Threads.</p></div>
+            <div><p className="eyebrow mb-2 text-[0.56rem]">Result</p><p className="text-xs leading-5 text-white/75">2% CPU, peak queries under 2s, and recognition in 10s.</p></div>
+          </div>
+
+          <ul className="mt-5 flex flex-wrap gap-2" aria-label="ShelfScan technologies">
+            {["Next.js", "PostgreSQL + Drizzle ORM", "Docker", "BullMQ", "Redis", "AWS SES", "Grafana"].map((technology) => (
+              <li key={technology} className="rounded-full border border-white/[0.09] bg-white/[0.035] px-3 py-1.5 font-mono text-[0.59rem] text-white/70">{technology}</li>
+            ))}
+          </ul>
+
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href="#experience" className="button-primary inline-flex min-h-10 items-center gap-2 rounded-full px-4 text-xs font-semibold">Explore experience <ArrowUpRight size={14} aria-hidden="true" /></a>
+            <a href="#contact" className="inline-flex min-h-10 items-center gap-2 rounded-full border border-white/15 px-4 text-xs font-semibold text-white/85 transition-colors hover:border-white/30 hover:bg-white/[0.05]">Discuss a project <ArrowDownRight size={14} aria-hidden="true" /></a>
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const handlePointerMove = (event: PointerEvent<HTMLElement>) => {
+    if (event.pointerType !== "mouse") return;
+    const card = event.currentTarget;
+    const bounds = card.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width;
+    const y = (event.clientY - bounds.top) / bounds.height;
+    const rotateX = (0.5 - y) * 12;
+    const rotateY = (x - 0.5) * 12;
+    card.style.setProperty("--spotlight-x", `${x * 100}%`);
+    card.style.setProperty("--spotlight-y", `${y * 100}%`);
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  };
+
+  const resetPointer = (event: PointerEvent<HTMLElement>) => {
+    event.currentTarget.style.transform = "";
+  };
+
+  const tags = getProjectTags(project);
+  return (
+    <article
+      className="project-card surface-card group relative flex h-full flex-col overflow-hidden"
+      onPointerMove={handlePointerMove}
+      onPointerLeave={resetPointer}
+      style={{ "--spotlight-x": "50%", "--spotlight-y": "50%" } as ProjectStyle}
+      data-reveal
+    >
+      <div className="project-spotlight pointer-events-none absolute inset-0 z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden="true" />
+      <div className="project-preview group relative aspect-[16/10] overflow-hidden">
+        <ProjectImage src={project.imgSrc} alt={`${project.title} preview`} priority={index < 3} />
+        <span className="absolute left-3 top-3 z-10 rounded-full border border-white/15 bg-black/45 px-3 py-1 font-mono text-[0.58rem] text-white/90 backdrop-blur-md">{project.category}</span>
+      </div>
+
+      <div className="flex flex-1 flex-col p-4 sm:p-5">
+        <div className="mb-2 flex items-center justify-between gap-3">
+          <p className="font-mono text-[0.58rem] uppercase tracking-[0.1em] text-muted-foreground">{project.date}</p>
+          <span className="font-mono text-[0.56rem] text-white/35">PROJECT {String(index + 1).padStart(2, "0")}</span>
+        </div>
+        <h3 className="mb-2 font-heading text-lg font-semibold leading-snug tracking-[-0.025em] sm:text-xl">{project.title}</h3>
+        <p className="line-clamp-2 text-sm leading-6 text-muted-foreground">{project.description}</p>
+
+        <ul className="mt-4 flex flex-wrap gap-1.5" aria-label={`${project.title} technology tags`}>
+          {tags.map((tag) => <li key={tag} className="rounded-full border border-white/[0.08] bg-white/[0.025] px-2.5 py-1 font-mono text-[0.55rem] text-white/60">{tag}</li>)}
+        </ul>
+
+        <details className="project-details mt-4 border-t border-white/[0.07] pt-3">
+          <summary className="cursor-pointer text-xs font-medium text-white/65 transition-colors hover:text-cyan-200">Full project details</summary>
+          <p className="mt-3 text-xs leading-6 text-muted-foreground">{project.description}</p>
+        </details>
+
+        <div className="mt-auto flex flex-wrap gap-2 pt-5">
+          {project.demo && <a href={project.demo} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title} live demo in a new tab`} className="project-link inline-flex min-h-9 items-center gap-2 rounded-full border border-white/15 px-3.5 text-[0.68rem] font-semibold text-white/80 transition-colors hover:border-cyan-200/40 hover:text-cyan-100"><ExternalLink size={14} aria-hidden="true" />Live demo</a>}
+          {project.url && <a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title} source repository in a new tab`} className="project-link inline-flex min-h-9 items-center gap-2 rounded-full border border-white/15 px-3.5 text-[0.68rem] font-semibold text-white/80 transition-colors hover:border-violet-300/40 hover:text-violet-100"><Github size={14} aria-hidden="true" />Code</a>}
+          {!project.demo && !project.url && <span className="font-mono text-[0.58rem] text-white/40">No public demo or repository</span>}
+        </div>
+      </div>
+    </article>
   );
 }
 
 export default function Projects() {
-  const [projects, setProjects] = useState<Project[]>([]);
   const [visibleProjects, setVisibleProjects] = useState(6);
-  const [isLoading, setIsLoading] = useState(false);
   const [activeFilter, setActiveFilter] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const normalizedQuery = searchQuery.trim().toLowerCase();
 
-  // Extract unique categories from projects
-  const rawProjects = projectsData.projects as Project[];
+  const matchesProject = (project: Project) => {
+    const matchesFilter = activeFilter === "All" || project.category === activeFilter;
+    const matchesSearch = !normalizedQuery || `${project.title} ${project.description}`.toLowerCase().includes(normalizedQuery);
+    return matchesFilter && matchesSearch;
+  };
 
-  const categories = Array.from(
-    new Set(
-      rawProjects.map((project) => {
-        if (!project.category) {
-          if (
-            project.title.includes("React") ||
-            project.description.includes("React")
-          ) {
-            return "React";
-          } else if (
-            project.title.includes("Next") ||
-            project.description.includes("Next")
-          ) {
-            return "Next.js";
-          } else if (
-            project.title.includes("Node") ||
-            project.description.includes("Node")
-          ) {
-            return "Backend";
-          } else if (
-            project.title.includes("UI") ||
-            project.description.includes("UI")
-          ) {
-            return "UI/UX";
-          } else if (
-            project.title.includes("AI AGENT") ||
-            project.description.includes("UI")
-          ) {
-            return "AI AGENT";
-          } else {
-            return "Other";
-          }
-        }
-        return project.category;
-      })
-    )
-  );
+  const showFeatured = Boolean(featuredProject && matchesProject(featuredProject));
+  const filteredProjects = projects.filter((project) => project !== featuredProject && matchesProject(project));
+  const visibleList = filteredProjects.slice(0, visibleProjects);
+  const hasAnyResult = showFeatured || filteredProjects.length > 0;
 
-  useEffect(() => {
-    const rawProjects = projectsData.projects as Project[];
-
-    // Assign categories if not present
-    const projectsWithCategories = rawProjects.map((project) => {
-      if (!project.category) {
-        if (
-          project.title.includes("React") ||
-          project.description.includes("React")
-        ) {
-          return { ...project, category: "React" };
-        } else if (
-          project.title.includes("Next") ||
-          project.description.includes("Next")
-        ) {
-          return { ...project, category: "Next.js" };
-        } else if (
-          project.title.includes("Node") ||
-          project.description.includes("Node")
-        ) {
-          return { ...project, category: "Backend" };
-        } else if (
-          project.title.includes("UI") ||
-          project.description.includes("UI")
-        ) {
-          return { ...project, category: "UI/UX" };
-        } else if (
-          project.title.includes("AI AGENT") ||
-          project.description.includes("UI")
-        ) {
-          return { ...project, category: "AI AGENT" };
-        } else {
-          return { ...project, category: "Other" };
-        }
-      }
-      return project;
-    });
-
-    setProjects(projectsWithCategories);
-  }, []);
-
-  const handleFilterChange = (category: string) => {
+  const changeFilter = (category: string) => {
     setActiveFilter(category);
     setVisibleProjects(6);
   };
 
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(e.target.value);
-    setVisibleProjects(6);
-  };
-
-  const filteredProjects = projects.filter((project) => {
-    const matchesFilter =
-      activeFilter === "All" || project.category === activeFilter;
-    const matchesSearch =
-      project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      project.description.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesFilter && matchesSearch;
-  });
-
-  const loadMore = () => {
-    setIsLoading(true);
-
-    // Simulate loading delay for better UX
-    setTimeout(() => {
-      setVisibleProjects((prev) => Math.min(prev + 6, filteredProjects.length));
-      setIsLoading(false);
-    }, 500);
-  };
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.5 },
-    },
-  };
-
-  const handleProjectClick = (project: Project) => {
-    setSelectedProject(project);
-    setIsModalOpen(true);
-  };
-
   return (
-    <section id="projects" className="py-20 px-4 bg-muted/30">
-      <div className="lg:container mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="text-center mb-8"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">My Projects</h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A showcase of my web development projects, demonstrating my skills
-            and experience in building modern web applications.
-          </p>
-        </motion.div>
-
-        <div className="mb-8">
-          <div className="flex flex-col md:flex-row gap-4 justify-between items-center mb-6">
-            <ProjectFilter
-              categories={Array.from(categories)}
-              onFilterChange={handleFilterChange}
-              activeFilter={activeFilter}
-            />
-
-            <div className="relative w-full md:w-64">
-              <Input
-                type="text"
-                placeholder="Search projects..."
-                value={searchQuery}
-                onChange={handleSearch}
-                className="pl-10"
-              />
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            </div>
-          </div>
+    <section id="projects" className="section-space px-4 sm:px-6">
+      <div className="page-container">
+        <div className="mb-9 max-w-3xl" data-reveal>
+          <p className="eyebrow mb-3">Selected work</p>
+          <h2 className="font-heading text-[clamp(2rem,4vw,3.25rem)] font-semibold leading-[1.08] tracking-[-0.05em]">Projects built to <span className="gradient-text">solve real problems.</span></h2>
+          <p className="mt-4 max-w-[56ch] text-sm leading-7 text-muted-foreground sm:text-base">A showcase of my web development projects, demonstrating my skills and experience in building modern web applications.</p>
         </div>
 
-        {filteredProjects.length === 0 ? (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-center py-12"
-          >
-            <p className="text-xl text-muted-foreground">
-              No projects found matching your criteria.
-            </p>
-          </motion.div>
-        ) : (
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            <AnimatePresence>
-              {filteredProjects
-                .slice(0, visibleProjects)
-                .map((project, index) => (
-                  <motion.div
-                    key={index}
-                    variants={itemVariants}
-                    whileHover={{ y: -10 }}
-                    transition={{ duration: 0.3 }}
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -50 }}
-                    layout
-                  >
-                    <Card 
-                      className="overflow-hidden h-full flex flex-col cursor-pointer group hover:shadow-xl transition-all duration-300 border-border/50"
-                      onClick={() => handleProjectClick(project)}
-                    >
-                      <div className="relative h-48 overflow-hidden bg-muted">
-                        <ProjectImage
-                          src={project.imgSrc}
-                          alt={project.title}
-                          priority={index < 3}
-                        />
-                        {project.category && (
-                          <div className="absolute top-2 right-2 bg-primary/80 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
-                            {project.category}
-                          </div>
-                        )}
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                          <span className="bg-background/80 text-foreground px-4 py-2 rounded-full text-sm font-medium backdrop-blur-md transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                            View Details
-                          </span>
-                        </div>
-                      </div>
-                      <CardContent className="p-6 flex-grow">
-                        <div className="flex items-center text-sm text-muted-foreground mb-3">
-                          <Calendar className="h-4 w-4 mr-2" />
-                          <span>{project.date}</span>
-                        </div>
-                        <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                          {project.title}
-                        </h3>
-                        <p className="text-muted-foreground line-clamp-3">
-                          {project.description}
-                        </p>
-                      </CardContent>
-                      <CardFooter className="p-6 pt-0 flex justify-between" onClick={(e) => e.stopPropagation()}>
-                        {project.demo ? (
-                          <Link
-                            href={project.demo}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <Button variant="outline" size="sm" className="gap-2">
-                              <ExternalLink className="h-4 w-4" />
-                              Live Demo
-                            </Button>
-                          </Link>
-                        ) : (
-                          <Button variant="outline" size="sm" className="gap-2" disabled>
-                            <ExternalLink className="h-4 w-4" />
-                            Live Demo
-                          </Button>
-                        )}
-                        {project.url ? (
-                          <Link
-                            href={project.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <Button variant="ghost" size="sm" className="gap-2">
-                              <Github className="h-4 w-4" />
-                              Code
-                            </Button>
-                          </Link>
-                        ) : (
-                          <Button variant="ghost" size="sm" className="gap-2" disabled>
-                            <Github className="h-4 w-4" />
-                            Code
-                          </Button>
-                        )}
-                      </CardFooter>
-                    </Card>
-                  </motion.div>
-                ))}
-            </AnimatePresence>
-          </motion.div>
-        )}
+        <div className="mb-8 flex flex-col gap-4 border-y border-white/[0.08] py-4 lg:flex-row lg:items-center lg:justify-between" data-reveal>
+          <ProjectFilter categories={categories} onFilterChange={changeFilter} activeFilter={activeFilter} />
+          <label className="relative block w-full shrink-0 lg:max-w-[260px]">
+            <span className="sr-only">Search projects</span>
+            <Search size={16} aria-hidden="true" className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-muted-foreground" />
+            <input
+              type="search"
+              value={searchQuery}
+              onChange={(event) => { setSearchQuery(event.target.value); setVisibleProjects(6); }}
+              placeholder="Search projects…"
+              className="h-11 w-full rounded-input border border-white/10 bg-white/[0.035] pl-10 pr-4 text-sm text-white placeholder:text-white/35 focus:border-cyan-300/50 focus:outline-none focus:ring-4 focus:ring-cyan-300/10"
+            />
+          </label>
+        </div>
+
+        <p className="sr-only" aria-live="polite">{filteredProjects.length + (showFeatured ? 1 : 0)} projects shown</p>
+
+        {showFeatured && featuredProject && <div className="mb-4"><FeaturedProject project={featuredProject} /></div>}
+
+        {visibleList.length > 0 ? (
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3" aria-label="Project list">
+            {visibleList.map((project, index) => <ProjectCard key={`${project.title}-${project.date}`} project={project} index={index} />)}
+          </div>
+        ) : !showFeatured && !hasAnyResult ? (
+          <div className="surface-card grid min-h-56 place-items-center px-6 py-12 text-center" data-reveal>
+            <div>
+              <span className="mx-auto mb-4 grid size-12 place-items-center rounded-full border border-white/10 bg-white/[0.035] text-violet-200"><Search size={19} aria-hidden="true" /></span>
+              <h3 className="font-heading text-xl font-semibold">No matching projects</h3>
+              <p className="mt-2 text-sm text-muted-foreground">Try another search term or category.</p>
+              <button type="button" onClick={() => { setSearchQuery(""); changeFilter("All"); }} className="mt-5 rounded-full border border-white/15 px-4 py-2 text-xs font-semibold text-white/80 transition-colors hover:border-cyan-200/40 hover:text-cyan-100">Clear filters</button>
+            </div>
+          </div>
+        ) : null}
 
         {visibleProjects < filteredProjects.length && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="flex justify-center mt-12"
-          >
-            <Button
-              onClick={loadMore}
-              size="lg"
-              className="gap-2"
-              disabled={isLoading}
-            >
-              {isLoading ? (
-                <>
-                  <span className="animate-spin mr-2">⟳</span>
-                  Loading...
-                </>
-              ) : (
-                "Load More Projects"
-              )}
-            </Button>
-          </motion.div>
+          <div className="mt-10 flex justify-center">
+            <button type="button" onClick={() => setVisibleProjects((visible) => Math.min(visible + 6, filteredProjects.length))} className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 px-5 text-sm font-semibold text-white/80 transition-colors hover:border-violet-300/40 hover:bg-white/[0.04] hover:text-white">
+              Load more projects <ArrowDownRight size={15} aria-hidden="true" />
+            </button>
+          </div>
         )}
       </div>
-      <ProjectModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        project={selectedProject}
-      />
     </section>
   );
 }

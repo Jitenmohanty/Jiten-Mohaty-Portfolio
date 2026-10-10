@@ -336,6 +336,24 @@
     font-size: 0.65rem;
     white-space: nowrap;
   }
+
+  .project-card {
+    transform-style: preserve-3d;
+    transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1), border-color 300ms ease, box-shadow 300ms ease;
+    will-change: transform;
+  }
+
+  .project-spotlight {
+    background: radial-gradient(460px circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%), rgba(124, 92, 255, 0.13), transparent 62%);
+  }
+
+  .project-details summary::marker {
+    color: #22d3ee;
+  }
+
+  .project-details[open] summary {
+    color: #a5f3fc;
+  }
 }
 
 @keyframes chip-float {
