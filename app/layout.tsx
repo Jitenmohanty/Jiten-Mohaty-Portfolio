@@ -1,14 +1,16 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import AnimatedBackground from "@/components/animated-background";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", weight: ["400", "500"] });
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk", weight: ["600", "700"] });
+const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains-mono", weight: ["400", "500"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jitenmohanty.vercel.app"),
+  metadataBase: new URL("https://www.jitenmohanty.in"),
+  alternates: { canonical: "https://www.jitenmohanty.in" },
   title: "Jiten Mohanty | Full Stack Developer",
   description:
     "Portfolio of Jiten Mohanty — Full Stack Developer specializing in Next.js, React, Node.js, PostgreSQL, and AI integrations. Building scalable web apps and AI-powered platforms from Bhubaneswar, India.",
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
     title: "Jiten Mohanty | Full Stack Developer",
     description:
       "Full Stack Developer specializing in Next.js, React, Node.js, and AI integrations. View projects, experience, and get in touch.",
-    url: "https://jitenmohanty.vercel.app",
+    url: "https://www.jitenmohanty.in",
     siteName: "Jiten Mohanty Portfolio",
     images: [
       {
@@ -73,15 +75,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
  return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className} suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable}`} suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
         >
-          <AnimatedBackground />
           {children}
         </ThemeProvider>
       </body>
