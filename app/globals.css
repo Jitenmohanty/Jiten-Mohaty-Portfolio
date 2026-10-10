@@ -216,6 +216,29 @@
   .link-wipe:hover {
     background-size: 100% 1px;
   }
+
+  .hero-cursor-glow {
+    background: radial-gradient(560px circle at var(--glow-x, 50%) var(--glow-y, 40%), rgba(124, 92, 255, 0.12), transparent 72%);
+    transition: opacity 300ms ease;
+  }
+
+  .float-chip-one {
+    animation: chip-float 7s ease-in-out infinite;
+  }
+
+  .float-chip-two {
+    animation: chip-float 8s ease-in-out -2s infinite reverse;
+  }
+
+  .float-chip-three {
+    animation: chip-float 9s ease-in-out -4s infinite;
+  }
+}
+
+@keyframes chip-float {
+  0%,
+  100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -8px, 0); }
 }
 
 @media (max-width: 767px) {
