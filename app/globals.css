@@ -304,12 +304,49 @@
     color: #7fe7f5;
     font-weight: 600;
   }
+
+  .skill-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .skill-marquee-track {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    gap: 0.65rem;
+    animation: skill-marquee 42s linear infinite;
+    will-change: transform;
+  }
+
+  .skill-marquee-reverse {
+    animation-direction: reverse;
+    animation-duration: 48s;
+  }
+
+  .skill-marquee-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.025);
+    padding: 0.5rem 0.8rem;
+    color: rgba(244, 245, 248, 0.68);
+    font-family: var(--font-jetbrains-mono), monospace;
+    font-size: 0.65rem;
+    white-space: nowrap;
+  }
 }
 
 @keyframes chip-float {
   0%,
   100% { transform: translate3d(0, 0, 0); }
   50% { transform: translate3d(0, -8px, 0); }
+}
+
+@keyframes skill-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 @media (max-width: 767px) {
