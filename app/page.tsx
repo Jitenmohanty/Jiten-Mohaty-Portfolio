@@ -2,6 +2,7 @@
 import Hero from "@/components/hero";
 import ImpactStats from "@/components/impact-stats";
 import About from "@/components/about";
+import Experience from "@/components/experience";
 import TalkToMe from "@/components/talk-to-me";
 import Skills from "@/components/skills";
 import Projects from "@/components/projects";
@@ -19,6 +20,7 @@ export default function Home() {
       <Hero />
       <ImpactStats />
       <About />
+      <Experience />
       <Skills />
       <Projects />
       <Contact />

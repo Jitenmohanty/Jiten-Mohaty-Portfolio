@@ -270,6 +270,40 @@
     --metric-width: 33%;
     background: var(--gradient);
   }
+
+  .experience-line {
+    position: absolute;
+    z-index: 0;
+    top: 1rem;
+    bottom: 1rem;
+    left: calc(50% - 1px);
+    width: 2px;
+    transform: scaleY(0);
+    transform-origin: top center;
+    background: linear-gradient(to bottom, rgba(124, 92, 255, 0.85), rgba(34, 211, 238, 0.55), rgba(124, 92, 255, 0.15));
+    box-shadow: 0 0 20px rgba(124, 92, 255, 0.28);
+  }
+
+  .experience-marker {
+    z-index: 1;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 2.1rem;
+  }
+
+  .experience-marker span {
+    width: 0.7rem;
+    height: 0.7rem;
+    border: 2px solid #a998ff;
+    border-radius: 999px;
+    background: #0e1016;
+    box-shadow: 0 0 0 5px rgba(124, 92, 255, 0.12), 0 0 20px rgba(124, 92, 255, 0.4);
+  }
+
+  .metric-text {
+    color: #7fe7f5;
+    font-weight: 600;
+  }
 }
 
 @keyframes chip-float {
@@ -285,6 +319,10 @@
 
   .section-space {
     padding-block: 4.5rem;
+  }
+
+  .experience-line {
+    display: none;
   }
 }
 
