@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { Cloud, Code2, Database, PanelsTopLeft, Server, Wrench } from "lucide-react";
-import { SiAmazon, SiDocker, SiDrizzle, SiGrafana, SiGoogle, SiNextdotjs, SiNodedotjs, SiPostgresql, SiReact, SiRedis, SiTypescript } from "react-icons/si";
+import { SiDocker, SiDrizzle, SiGrafana, SiGoogle, SiNextdotjs, SiNodedotjs, SiPostgresql, SiReact, SiRedis, SiTypescript } from "react-icons/si";
 
 const SkillsCloud = dynamic(() => import("./skills-cloud"), {
   ssr: false,
@@ -28,7 +28,7 @@ const marqueeSkills = [
   { name: "PostgreSQL", icon: SiPostgresql },
   { name: "Redis", icon: SiRedis },
   { name: "Docker", icon: SiDocker },
-  { name: "AWS", icon: SiAmazon },
+  { name: "AWS", icon: Cloud },
   { name: "Gemini API", icon: SiGoogle },
   { name: "BullMQ", icon: SiNodedotjs },
   { name: "Grafana", icon: SiGrafana },
