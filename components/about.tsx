@@ -1,436 +1,107 @@
-"use client";
+import { Award, BriefcaseBusiness, GraduationCap, MapPin, Sparkles } from "lucide-react";
 
-import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  Briefcase,
-  GraduationCap,
-  Award,
-  MapPin,
-  Mail,
-  Phone,
-  User,
-} from "lucide-react";
+const certifications = [
+  "NPTEL clear on IoT, Cloud Computing and AI",
+  "Intern on JAVA at PieInfo Com",
+  "Core Java Excellence with DSA at Coding Ninjas",
+  "Frontend With Excellence at Coding Ninjas",
+  "React.js With Excellence at Coding Ninjas",
+  "Backend on Node.js With Excellence at Coding Ninjas",
+];
+
+const credentials = [
+  { degree: "MCA (Computer Application)", institution: "Biju Patnaik University, Rourkela", score: "CGPA 8.89", duration: "2020 – 2022" },
+  { degree: "BSC (Mathematics)", institution: "Utkal University, Bhubaneswar", score: "CGPA 7.04", duration: "2016 – 2019" },
+];
 
 export default function About() {
-  const personalInfo = [
-    { label: "Name", value: "Jiten Mohanty", icon: User },
-    { label: "Email", value: "jitenmohantyaz@gmail.com", icon: Mail },
-    { label: "Location", value: "Bhubaneswar, Odisha", icon: MapPin },
-    { label: "Phone", value: "+91-8637246237", icon: Phone },
-  ];
-
-  const workExperience = [
-    {
-      title: "Full Stack Developer",
-      company: "Shelfex, Gurgaon, Haryana",
-      duration: "July 2025 – Present",
-    },
-    {
-      title: "Full Stack Web Developer",
-      company: "Daya Consultancy Services, Bhubaneswar",
-      duration: "Sept 2024 – June 2025",
-    },
-  ];
-
-  const education = [
-    {
-      degree: "MCA (Computer Application)",
-      institution: "Biju Patnaik University, Rourkela",
-      score: "CGPA 8.89",
-      duration: "2020 - 2022",
-    },
-    {
-      degree: "BSC (Mathematics)",
-      institution: "Utkal University, Bhubaneswar",
-      score: "CGPA 7.04",
-      duration: "2016 - 2019",
-    },
-  ];
-
-  const certifications = [
-    "NPTEL clear on IoT, Cloud Computing and AI",
-    "Intern on JAVA at PieInfo Com",
-    "Core Java Excellence with DSA at Coding Ninjas",
-    "Frontend With Excellence at Coding Ninjas",
-    "React.js With Excellence at Coding Ninjas",
-    "Backend on Node.js With Excellence at Coding Ninjas",
-  ];
-
   return (
-    <section id="about" className="py-12 sm:py-16 md:py-20 px-4 bg-muted/30">
-      <div className="lg:container mx-auto max-w-7xl">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="text-center mb-12 sm:mb-16"
-        >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
-            About Me
+    <section id="about" className="section-space px-4 sm:px-6">
+      <div className="page-container">
+        <div className="mb-10 max-w-3xl md:mb-14" data-reveal>
+          <p className="eyebrow mb-3">About me</p>
+          <h2 className="font-heading text-[clamp(2rem,4vw,3.25rem)] font-semibold leading-[1.08] tracking-[-0.05em]">
+            Building products that make <span className="gradient-text">work better.</span>
           </h2>
-          <div className="w-16 sm:w-20 h-1 bg-primary mx-auto mb-6 sm:mb-8"></div>
-        </motion.div>
+        </div>
 
-        {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
-          {/* Left Column - Description, Work Experience & Personal Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="space-y-6 sm:space-y-8"
-          >
-            {/* Description */}
-            <div className="space-y-4 sm:space-y-6">
-              <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
-                Full Stack Developer specialized in building scalable web
-                platforms using{" "}
-                <strong className="text-foreground">
-                  PERN, MERN, and Next.js
-                </strong>{" "}
-                stacks. I focus on{" "}
-                <strong className="text-foreground">
-                  backend performance optimization
-                </strong>
-                , containerized microservices with{" "}
-                <strong className="text-foreground">Docker</strong>, and
-                production observability with{" "}
-                <strong className="text-foreground">Grafana</strong>. Currently
-                building AI-driven platforms serving{" "}
-                <strong className="text-foreground">
-                  Fortune 500 FMCG clients including PepsiCo
-                </strong>{" "}
-                — where I reduced server CPU from 90% to 2% and cut image
-                recognition latency from 30s to 10s.
-              </p>
+        <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:gap-10">
+          <div className="flex flex-col justify-center" data-reveal>
+            <p className="max-w-[58ch] text-base leading-[1.9] text-muted-foreground sm:text-lg">
+              Full Stack Developer specialized in building scalable web platforms using{" "}
+              <strong className="font-medium text-foreground">PERN, MERN, and Next.js</strong> stacks. I focus on{" "}
+              <strong className="font-medium text-foreground">backend performance optimization</strong>, containerized microservices with{" "}
+              <strong className="font-medium text-foreground">Docker</strong>, and production observability with{" "}
+              <strong className="font-medium text-foreground">Grafana</strong>. Currently building AI-driven platforms serving{" "}
+              <strong className="font-medium text-foreground">Fortune 500 FMCG clients including PepsiCo</strong> — where I reduced server CPU from{" "}
+              <strong className="font-medium text-cyan-300">90% to 2%</strong> and cut image recognition latency from{" "}
+              <strong className="font-medium text-cyan-300">30s to 10s</strong>.
+            </p>
+            <div className="mt-7 flex items-center gap-3 text-sm text-muted-foreground">
+              <span className="grid size-9 place-items-center rounded-full border border-white/10 bg-white/[0.035] text-violet-300">
+                <Sparkles size={16} aria-hidden="true" />
+              </span>
+              Focused on practical AI, system performance, and product quality.
             </div>
+          </div>
 
-            {/* Detailed Work Experience */}
-            <Card className="border-muted/50 shadow-sm hover:shadow-md transition-shadow">
-              <CardContent className="p-4 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 flex items-center gap-2">
-                  <Briefcase className="h-5 w-5 text-primary" />
-                  Professional Experience
-                </h3>
-                <div className="space-y-6 sm:space-y-8">
-                  {/* ShelfEx */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3 }}
-                    viewport={{ once: true }}
-                    className="border-l-4 border-primary/30 pl-4 sm:pl-6"
-                  >
-                    <div className="mb-3">
-                      <p className="font-semibold text-base sm:text-lg">
-                        Full Stack Developer
-                      </p>
-                      <p className="text-sm sm:text-base text-muted-foreground font-medium">
-                        ShelfEx, Gurgaon, Haryana
-                      </p>
-                      <p className="text-xs sm:text-sm text-muted-foreground">
-                        July 2025 – Present
-                      </p>
-                    </div>
-                    <ul className="list-disc list-inside text-xs sm:text-sm text-muted-foreground space-y-1.5 sm:space-y-2 leading-relaxed">
-                      <li>
-                        Built core backend modules for{" "}
-                        <strong className="text-foreground">ShelfScan</strong>,
-                        an AI-powered retail recognition platform serving
-                        <strong className="text-foreground">
-                          {" "}
-                          10,000+ users
-                        </strong>{" "}
-                        across
-                        <strong className="text-foreground">
-                          {" "}
-                          10L+ stores
-                        </strong>{" "}
-                        for enterprise clients including
-                        <strong className="text-foreground"> PepsiCo</strong>.
-                      </li>
-                      <li>
-                        Reduced server{" "}
-                        <strong className="text-foreground">
-                          CPU from 90% to 2%
-                        </strong>{" "}
-                        by overhauling query execution plans, adding strategic
-                        indexes, and implementing
-                        <strong className="text-foreground">
-                          {" "}
-                          parallel database connections
-                        </strong>{" "}
-                        — peak query latency now under{" "}
-                        <strong className="text-foreground">2s</strong>.
-                      </li>
-                      <li>
-                        Optimized the{" "}
-                        <strong className="text-foreground">
-                          image recognition pipeline from 30s to 10s
-                        </strong>{" "}
-                        using
-                        <strong className="text-foreground">
-                          {" "}
-                          Worker Threads
-                        </strong>{" "}
-                        and algorithmic code improvements.
-                      </li>
-                      <li>
-                        Built background job pipelines with
-                        <strong className="text-foreground"> BullMQ</strong>,
-                        <strong className="text-foreground"> Redis</strong>, and
-                        <strong className="text-foreground">
-                          {" "}
-                          AWS SES
-                        </strong>{" "}
-                        handling
-                        <strong className="text-foreground">
-                          {" "}
-                          10k+ daily tasks
-                        </strong>
-                        .
-                      </li>
-                      <li>
-                        Set up production observability with
-                        <strong className="text-foreground">
-                          {" "}
-                          Grafana
-                        </strong>{" "}
-                        dashboards to monitor query latency, CPU usage, and job
-                        throughput in real time.
-                      </li>
-                      <li>
-                        Optimized bulk data handling via
-                        <strong className="text-foreground">
-                          {" "}
-                          Node.js Streams
-                        </strong>{" "}
-                        and improved page performance with{" "}
-                        <strong className="text-foreground">
-                          Next.js SSR/ISR
-                        </strong>
-                        .
-                      </li>
-                    </ul>
-                  </motion.div>
+          <div className="grid grid-cols-2 gap-3">
+            <article className="surface-card p-4 sm:p-5" data-reveal>
+              <span className="mb-4 grid size-9 place-items-center rounded-xl bg-violet-400/10 text-violet-300"><MapPin size={17} aria-hidden="true" /></span>
+              <p className="eyebrow mb-1 text-[0.6rem]">Based in</p>
+              <h3 className="font-heading text-base font-semibold tracking-tight sm:text-lg">Bhubaneswar</h3>
+              <p className="text-xs text-muted-foreground">Odisha, India</p>
+            </article>
+            <article className="surface-card p-4 sm:p-5" data-reveal>
+              <span className="mb-4 grid size-9 place-items-center rounded-xl bg-cyan-300/10 text-cyan-300"><BriefcaseBusiness size={17} aria-hidden="true" /></span>
+              <p className="eyebrow mb-1 text-[0.6rem]">Experience</p>
+              <h3 className="gradient-text font-heading text-2xl font-semibold tracking-tight sm:text-3xl">2+ years</h3>
+              <p className="text-xs text-muted-foreground">Full stack development</p>
+            </article>
+            <article className="surface-card col-span-2 p-4 sm:p-5" data-reveal>
+              <p className="eyebrow mb-2 text-[0.6rem]">Currently building at</p>
+              <div className="flex flex-wrap items-end justify-between gap-2">
+                <h3 className="font-heading text-xl font-semibold tracking-tight sm:text-2xl">ShelfEx</h3>
+                <p className="text-xs leading-5 text-muted-foreground">AI-driven retail products</p>
+              </div>
+            </article>
 
-                  {/* Daya Consultancy Services */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.1 }}
-                    viewport={{ once: true }}
-                    className="border-l-4 border-primary/30 pl-4 sm:pl-6"
-                  >
-                    <div className="mb-3">
-                      <p className="font-semibold text-base sm:text-lg">
-                        Full Stack Web Developer
-                      </p>
-                      <p className="text-sm sm:text-base text-muted-foreground font-medium">
-                        Daya Consultancy Services, Bhubaneswar, Odisha
-                      </p>
-                      <p className="text-xs sm:text-sm text-muted-foreground">
-                        Sept 2024 – June 2025
-                      </p>
-                    </div>
-                    <ul className="list-disc list-inside text-xs sm:text-sm text-muted-foreground space-y-1.5 sm:space-y-2 leading-relaxed">
-                      <li>
-                        Built a{" "}
-                        <strong className="text-foreground">PERN-based CRM</strong>{" "}
-                        with real-time dashboards, lead management, and secure{" "}
-                        <strong className="text-foreground">RBAC + JWT</strong>{" "}
-                        auth using HTTP-only cookie sessions.
-                      </li>
-                      <li>
-                        Managed a multi-container{" "}
-                        <strong className="text-foreground">
-                          Docker Compose
-                        </strong>{" "}
-                        setup (Node.js, PostgreSQL, Redis) with{" "}
-                        <strong className="text-foreground">CI/CD</strong> on{" "}
-                        <strong className="text-foreground">AWS EC2</strong>.
-                      </li>
-                      <li>
-                        Created a social media automation system with{" "}
-                        <strong className="text-foreground">OAuth 2.0</strong>{" "}
-                        using Google, Facebook Graph, and X APIs.
-                      </li>
-                      <li>
-                        Cut REST API latency by{" "}
-                        <strong className="text-foreground">25%</strong> using DB
-                        indexing and{" "}
-                        <strong className="text-foreground">Redis caching</strong>.
-                      </li>
-                    </ul>
-                  </motion.div>
+            <article className="surface-card col-span-2 p-4 sm:p-5" data-reveal>
+              <div className="mb-4 flex items-center gap-3">
+                <span className="grid size-9 place-items-center rounded-xl bg-cyan-300/10 text-cyan-300"><GraduationCap size={17} aria-hidden="true" /></span>
+                <div>
+                  <p className="eyebrow text-[0.6rem]">Education</p>
+                  <h3 className="font-heading text-lg font-semibold">Academic background</h3>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {credentials.map((credential) => (
+                  <div key={credential.degree} className="rounded-xl border border-white/[0.06] bg-white/[0.025] p-3">
+                    <p className="text-sm font-medium text-foreground">{credential.degree}</p>
+                    <p className="mt-1 text-xs leading-5 text-muted-foreground">{credential.institution}</p>
+                    <p className="mt-2 font-mono text-[0.6rem] uppercase tracking-[0.1em] text-cyan-200/80">{credential.score} · {credential.duration}</p>
+                  </div>
+                ))}
+              </div>
+            </article>
 
-            {/* Personal Information Card */}
-            <Card className="border-muted/50 shadow-sm hover:shadow-md transition-shadow">
-              <CardContent className="p-4 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 flex items-center gap-2">
-                  <User className="h-5 w-5 text-primary" />
-                  Personal Information
-                </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                  {personalInfo.map((info, index) => (
-                    <motion.div
-                      key={info.label}
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="space-y-1"
-                    >
-                      <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
-                        <info.icon className="h-4 w-4" />
-                        {info.label}:
-                      </div>
-                      <p className="text-sm sm:text-base font-medium break-all sm:break-normal">
-                        {info.value}
-                      </p>
-                    </motion.div>
-                  ))}
+            <article className="surface-card col-span-2 p-4 sm:p-5" data-reveal>
+              <div className="mb-4 flex items-center gap-3">
+                <span className="grid size-9 place-items-center rounded-xl bg-violet-400/10 text-violet-300"><Award size={17} aria-hidden="true" /></span>
+                <div>
+                  <p className="eyebrow text-[0.6rem]">Certifications</p>
+                  <h3 className="font-heading text-lg font-semibold">Courses & recognition</h3>
                 </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          {/* Right Column - Experience, Education, Certifications */}
-          <div className="space-y-6">
-            {/* Work Experience */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
-              <Card className="border-muted/50 shadow-sm hover:shadow-md transition-shadow">
-                <CardContent className="p-4 sm:p-6">
-                  <div className="flex items-start gap-3 sm:gap-4">
-                    <div className="bg-primary/10 p-2 sm:p-3 rounded-full flex-shrink-0">
-                      <Briefcase className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">
-                        Work Experience
-                      </h3>
-                      <div className="space-y-4 sm:space-y-6">
-                        {workExperience.map((work, index) => (
-                          <motion.div
-                            key={index}
-                            initial={{ opacity: 0, x: 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.3, delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            className="border-l-2 border-primary/20 pl-4 space-y-1"
-                          >
-                            <p className="font-medium text-sm sm:text-base">
-                              {work.title}
-                            </p>
-                            <p className="text-xs sm:text-sm text-muted-foreground">
-                              {work.company}
-                            </p>
-                            <p className="text-xs sm:text-sm text-muted-foreground font-medium">
-                              {work.duration}
-                            </p>
-                          </motion.div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Education */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              <Card className="border-muted/50 shadow-sm hover:shadow-md transition-shadow">
-                <CardContent className="p-4 sm:p-6">
-                  <div className="flex items-start gap-3 sm:gap-4">
-                    <div className="bg-primary/10 p-2 sm:p-3 rounded-full flex-shrink-0">
-                      <GraduationCap className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">
-                        Education
-                      </h3>
-                      <div className="space-y-4 sm:space-y-6">
-                        {education.map((edu, index) => (
-                          <motion.div
-                            key={index}
-                            initial={{ opacity: 0, x: 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.3, delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            className="border-l-2 border-primary/20 pl-4 space-y-1"
-                          >
-                            <p className="font-medium text-sm sm:text-base">
-                              {edu.degree}
-                            </p>
-                            <p className="text-xs sm:text-sm text-muted-foreground">
-                              {edu.institution}
-                            </p>
-                            <p className="text-xs sm:text-sm text-muted-foreground font-medium">
-                              {edu.score} | {edu.duration}
-                            </p>
-                          </motion.div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Certifications */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <Card className="border-muted/50 shadow-sm hover:shadow-md transition-shadow">
-                <CardContent className="p-4 sm:p-6">
-                  <div className="flex items-start gap-3 sm:gap-4">
-                    <div className="bg-primary/10 p-2 sm:p-3 rounded-full flex-shrink-0">
-                      <Award className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">
-                        Certifications
-                      </h3>
-                      <div className="space-y-2 sm:space-y-3">
-                        {certifications.map((cert, index) => (
-                          <motion.div
-                            key={index}
-                            initial={{ opacity: 0, x: 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.3, delay: index * 0.05 }}
-                            viewport={{ once: true }}
-                            className="flex items-start gap-2 text-xs sm:text-sm"
-                          >
-                            <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                            <p className="leading-relaxed">{cert}</p>
-                          </motion.div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
+              </div>
+              <ul className="grid gap-x-6 gap-y-2 sm:grid-cols-2">
+                {certifications.map((certification) => (
+                  <li key={certification} className="flex gap-2 text-xs leading-5 text-muted-foreground">
+                    <span className="mt-[0.55rem] size-1 shrink-0 rounded-full bg-cyan-300" aria-hidden="true" />
+                    {certification}
+                  </li>
+                ))}
+              </ul>
+            </article>
           </div>
         </div>
       </div>
