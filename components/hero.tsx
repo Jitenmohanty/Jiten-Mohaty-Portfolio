@@ -30,7 +30,7 @@ export default function Hero() {
       style={{ "--glow-x": "50%", "--glow-y": "40%" } as GlowStyle}
     >
       <div className="hero-cursor-glow pointer-events-none absolute inset-0 opacity-70" aria-hidden="true" />
-      <div className="page-container relative w-full">
+      <div className="page-container relative w-full lg:w-[calc(100%_-_3rem)] lg:max-w-[75rem]">
         <div className="grid items-center gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10">
           <div className="hero-copy relative z-10 max-w-[690px]">
             <p data-hero-reveal className="eyebrow mb-7 rounded-full border border-white/10 bg-white/[0.035] px-4 py-2.5 text-[0.68rem] text-white/75">
