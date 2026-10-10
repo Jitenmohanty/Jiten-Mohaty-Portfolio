@@ -125,7 +125,7 @@ export default function Contact() {
                 <div className="flex items-start gap-3">
                   <span className="grid size-10 shrink-0 place-items-center rounded-xl border border-cyan-200/15 bg-cyan-300/[0.07] text-cyan-200"><Phone size={17} aria-hidden="true" /></span>
                   <div>
-                    <p className="eyebrow mb-1 text-[0.58rem]">Phone</p>
+                    <p className="eyebrow mb-1 block w-fit text-[0.58rem]">Phone</p>
                     <a href="tel:+918637246237" className="link-wipe text-sm font-medium text-foreground">+91 8637246237</a>
                   </div>
                 </div>
