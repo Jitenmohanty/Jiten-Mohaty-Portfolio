@@ -354,6 +354,95 @@
   .project-details[open] summary {
     color: #a5f3fc;
   }
+
+  .magnetic-social {
+    transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1), color 220ms ease, border-color 220ms ease, background-color 220ms ease;
+  }
+
+  .floating-field {
+    position: relative;
+  }
+
+  .floating-field input,
+  .floating-field textarea {
+    display: block;
+    width: 100%;
+    min-height: 3.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.035);
+    padding: 1.25rem 1rem 0.45rem;
+    color: var(--text);
+    font-family: var(--font-inter), Inter, sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    outline: none;
+    transition: border-color 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
+  }
+
+  .floating-field textarea {
+    min-height: 9rem;
+    padding-top: 1.35rem;
+  }
+
+  .floating-field input:focus,
+  .floating-field textarea:focus {
+    border-color: rgba(34, 211, 238, 0.58);
+    background: rgba(255, 255, 255, 0.045);
+    box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.1);
+  }
+
+  .floating-field label {
+    position: absolute;
+    top: 0.42rem;
+    left: 1rem;
+    color: rgba(154, 160, 180, 0.76);
+    font-family: var(--font-jetbrains-mono), monospace;
+    font-size: 0.57rem;
+    letter-spacing: 0.06em;
+    line-height: 1.2;
+    pointer-events: none;
+    transition: top 180ms ease, font-size 180ms ease, color 180ms ease;
+  }
+
+  .floating-field input:placeholder-shown + label,
+  .floating-field textarea:placeholder-shown + label {
+    top: 1.18rem;
+    font-family: var(--font-inter), Inter, sans-serif;
+    font-size: 0.84rem;
+    letter-spacing: 0;
+  }
+
+  .floating-field input:focus + label,
+  .floating-field textarea:focus + label {
+    top: 0.42rem;
+    color: #8be8f5;
+    font-family: var(--font-jetbrains-mono), monospace;
+    font-size: 0.57rem;
+    letter-spacing: 0.06em;
+  }
+
+  .form-status {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    border-radius: 0.75rem;
+    padding: 0.75rem 0.9rem;
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .form-status-success {
+    border: 1px solid rgba(52, 211, 153, 0.24);
+    background: rgba(52, 211, 153, 0.07);
+    color: #a7f3d0;
+  }
+
+  .form-status-error {
+    border: 1px solid rgba(248, 113, 113, 0.25);
+    background: rgba(248, 113, 113, 0.07);
+    color: #fecaca;
+  }
 }
 
 @keyframes chip-float {
