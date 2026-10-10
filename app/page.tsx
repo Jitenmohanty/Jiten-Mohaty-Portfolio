@@ -1,5 +1,6 @@
 // app/page.tsx
 import Hero from "@/components/hero";
+import ImpactStats from "@/components/impact-stats";
 import About from "@/components/about";
 import TalkToMe from "@/components/talk-to-me";
 import Skills from "@/components/skills";
@@ -16,6 +17,7 @@ export default function Home() {
       <Toaster />
       <ClientNavbar /> {/* Use the client component wrapper */}
       <Hero />
+      <ImpactStats />
       <About />
       <Skills />
       <Projects />
